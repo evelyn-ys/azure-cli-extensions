@@ -1,0 +1,4737 @@
+operationGroups:
+  all:
+    - operationGroupName: Operations
+      cli:
+        cliKey: Operations
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: Skus
+      cli:
+        cliKey: Skus
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: StorageAccounts
+      cli:
+        cliKey: StorageAccounts
+      operations:
+        - operationName: CheckNameAvailability
+          cli:
+            cliKey: CheckNameAvailability
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: accountName(StorageAccountCheckNameAvailabilityParameters^object)
+              cli:
+                cliKey: accountName
+              bodySchema: StorageAccountCheckNameAvailabilityParameters
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Create
+          cli:
+            cliKey: Create
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(StorageAccountCreateParameters^object)
+              cli:
+                cliKey: parameters
+              bodySchema: StorageAccountCreateParameters
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Delete
+          cli:
+            cliKey: Delete
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+        - operationName: GetProperties
+          cli:
+            cliKey: GetProperties
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: $expand(StorageAccountExpand^sealed-choice)
+              cli:
+                cliKey: $expand
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Update
+          cli:
+            cliKey: Update
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(StorageAccountUpdateParameters^object)
+              cli:
+                cliKey: parameters
+              bodySchema: StorageAccountUpdateParameters
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: ListByResourceGroup
+          cli:
+            cliKey: ListByResourceGroup
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: ListKeys
+          cli:
+            cliKey: ListKeys
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: $expand(ListKeyExpand^constant)
+              cli:
+                cliKey: $expand
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: RegenerateKey
+          cli:
+            cliKey: RegenerateKey
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: regenerateKey(StorageAccountRegenerateKeyParameters^object)
+              cli:
+                cliKey: regenerateKey
+              bodySchema: StorageAccountRegenerateKeyParameters
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: ListAccountSAS
+          cli:
+            cliKey: ListAccountSAS
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(AccountSasParameters^object)
+              cli:
+                cliKey: parameters
+              bodySchema: AccountSasParameters
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: ListServiceSAS
+          cli:
+            cliKey: ListServiceSAS
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(ServiceSasParameters^object)
+              cli:
+                cliKey: parameters
+              bodySchema: ServiceSasParameters
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Failover
+          cli:
+            cliKey: Failover
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+        - operationName: RestoreBlobRanges
+          cli:
+            cliKey: RestoreBlobRanges
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(BlobRestoreParameters^object)
+              cli:
+                cliKey: parameters
+              bodySchema: BlobRestoreParameters
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: RevokeUserDelegationKeys
+          cli:
+            cliKey: RevokeUserDelegationKeys
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+    - operationGroupName: Usages
+      cli:
+        cliKey: Usages
+      operations:
+        - operationName: ListByLocation
+          cli:
+            cliKey: ListByLocation
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: location(string^string)
+              cli:
+                cliKey: location
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: ManagementPolicies
+      cli:
+        cliKey: ManagementPolicies
+      operations:
+        - operationName: Get
+          cli:
+            cliKey: Get
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: managementPolicyName(ManagementPolicyName^choice)
+              cli:
+                cliKey: managementPolicyName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: CreateOrUpdate
+          cli:
+            cliKey: CreateOrUpdate
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: managementPolicyName(ManagementPolicyName^choice)
+              cli:
+                cliKey: managementPolicyName
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: properties(ManagementPolicy^object)
+              cli:
+                cliKey: properties
+              bodySchema: ManagementPolicy
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Delete
+          cli:
+            cliKey: Delete
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: managementPolicyName(ManagementPolicyName^choice)
+              cli:
+                cliKey: managementPolicyName
+    - operationGroupName: PrivateEndpointConnections
+      cli:
+        cliKey: PrivateEndpointConnections
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Get
+          cli:
+            cliKey: Get
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: privateEndpointConnectionName(string^string)
+              cli:
+                cliKey: privateEndpointConnectionName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Put
+          cli:
+            cliKey: Put
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: privateEndpointConnectionName(string^string)
+              cli:
+                cliKey: privateEndpointConnectionName
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: properties(PrivateEndpointConnection^object)
+              cli:
+                cliKey: properties
+              bodySchema: PrivateEndpointConnection
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Delete
+          cli:
+            cliKey: Delete
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: privateEndpointConnectionName(string^string)
+              cli:
+                cliKey: privateEndpointConnectionName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: PrivateLinkResources
+      cli:
+        cliKey: PrivateLinkResources
+      operations:
+        - operationName: ListByStorageAccount
+          cli:
+            cliKey: ListByStorageAccount
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: ObjectReplicationPolicies
+      cli:
+        cliKey: ObjectReplicationPolicies
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Get
+          cli:
+            cliKey: Get
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: objectReplicationPolicyId(string^string)
+              cli:
+                cliKey: objectReplicationPolicyId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: CreateOrUpdate
+          cli:
+            cliKey: CreateOrUpdate
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: objectReplicationPolicyId(string^string)
+              cli:
+                cliKey: objectReplicationPolicyId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: properties(ObjectReplicationPolicy^object)
+              cli:
+                cliKey: properties
+              bodySchema: ObjectReplicationPolicy
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Delete
+          cli:
+            cliKey: Delete
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: objectReplicationPolicyId(string^string)
+              cli:
+                cliKey: objectReplicationPolicyId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: EncryptionScopes
+      cli:
+        cliKey: EncryptionScopes
+      operations:
+        - operationName: Put
+          cli:
+            cliKey: Put
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: encryptionScopeName(string^string)
+              cli:
+                cliKey: encryptionScopeName
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: encryptionScope(EncryptionScope^object)
+              cli:
+                cliKey: encryptionScope
+              bodySchema: EncryptionScope
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Patch
+          cli:
+            cliKey: Patch
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: encryptionScopeName(string^string)
+              cli:
+                cliKey: encryptionScopeName
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: encryptionScope(EncryptionScope^object)
+              cli:
+                cliKey: encryptionScope
+              bodySchema: EncryptionScope
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Get
+          cli:
+            cliKey: Get
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: encryptionScopeName(string^string)
+              cli:
+                cliKey: encryptionScopeName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: LocalUsers
+      cli:
+        cliKey: LocalUsers
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Get
+          cli:
+            cliKey: Get
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: username(string^string)
+              cli:
+                cliKey: username
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: CreateOrUpdate
+          cli:
+            cliKey: CreateOrUpdate
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: username(string^string)
+              cli:
+                cliKey: username
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: properties(LocalUser^object)
+              cli:
+                cliKey: properties
+              bodySchema: LocalUser
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Delete
+          cli:
+            cliKey: Delete
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: username(string^string)
+              cli:
+                cliKey: username
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: ListKeys
+          cli:
+            cliKey: ListKeys
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: username(string^string)
+              cli:
+                cliKey: username
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: BlobServices
+      cli:
+        cliKey: BlobServices
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: SetServiceProperties
+          cli:
+            cliKey: SetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: BlobServicesName(^constant)
+              cli:
+                cliKey: BlobServicesName
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(BlobServiceProperties^object)
+              cli:
+                cliKey: parameters
+              bodySchema: BlobServiceProperties
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: GetServiceProperties
+          cli:
+            cliKey: GetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: BlobServicesName(^constant)
+              cli:
+                cliKey: BlobServicesName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: BlobContainers
+      cli:
+        cliKey: BlobContainers
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: $maxpagesize(string^string)
+              cli:
+                cliKey: $maxpagesize
+            - parameterName: $filter(string^string)
+              cli:
+                cliKey: $filter
+            - parameterName: $include(ListContainersInclude^choice)
+              cli:
+                cliKey: $include
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Create
+          cli:
+            cliKey: Create
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: blobContainer(BlobContainer^object)
+              cli:
+                cliKey: blobContainer
+              bodySchema: BlobContainer
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Update
+          cli:
+            cliKey: Update
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: blobContainer(BlobContainer^object)
+              cli:
+                cliKey: blobContainer
+              bodySchema: BlobContainer
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Get
+          cli:
+            cliKey: Get
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Delete
+          cli:
+            cliKey: Delete
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+        - operationName: SetLegalHold
+          cli:
+            cliKey: SetLegalHold
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: LegalHold(LegalHold^object)
+              cli:
+                cliKey: LegalHold
+              bodySchema: LegalHold
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: ClearLegalHold
+          cli:
+            cliKey: ClearLegalHold
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: LegalHold(LegalHold^object)
+              cli:
+                cliKey: LegalHold
+              bodySchema: LegalHold
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: CreateOrUpdateImmutabilityPolicy
+          cli:
+            cliKey: CreateOrUpdateImmutabilityPolicy
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: immutabilityPolicyName(^constant)
+              cli:
+                cliKey: immutabilityPolicyName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: If-Match(string^string)
+              cli:
+                cliKey: If-Match
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(ImmutabilityPolicy^object)
+              cli:
+                cliKey: parameters
+              bodySchema: ImmutabilityPolicy
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: GetImmutabilityPolicy
+          cli:
+            cliKey: GetImmutabilityPolicy
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: immutabilityPolicyName(^constant)
+              cli:
+                cliKey: immutabilityPolicyName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: If-Match(string^string)
+              cli:
+                cliKey: If-Match
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: DeleteImmutabilityPolicy
+          cli:
+            cliKey: DeleteImmutabilityPolicy
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: immutabilityPolicyName(^constant)
+              cli:
+                cliKey: immutabilityPolicyName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: If-Match(string^string)
+              cli:
+                cliKey: If-Match
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: LockImmutabilityPolicy
+          cli:
+            cliKey: LockImmutabilityPolicy
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: If-Match(string^string)
+              cli:
+                cliKey: If-Match
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: ExtendImmutabilityPolicy
+          cli:
+            cliKey: ExtendImmutabilityPolicy
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: If-Match(string^string)
+              cli:
+                cliKey: If-Match
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(ImmutabilityPolicy^object)
+              cli:
+                cliKey: parameters
+              bodySchema: ImmutabilityPolicy
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Lease
+          cli:
+            cliKey: Lease
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: containerName(string^string)
+              cli:
+                cliKey: containerName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(LeaseContainerRequest^object)
+              cli:
+                cliKey: parameters
+              bodySchema: LeaseContainerRequest
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: FileServices
+      cli:
+        cliKey: FileServices
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: SetServiceProperties
+          cli:
+            cliKey: SetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: FileServicesName(^constant)
+              cli:
+                cliKey: FileServicesName
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(FileServiceProperties^object)
+              cli:
+                cliKey: parameters
+              bodySchema: FileServiceProperties
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: GetServiceProperties
+          cli:
+            cliKey: GetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: FileServicesName(^constant)
+              cli:
+                cliKey: FileServicesName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: FileShares
+      cli:
+        cliKey: FileShares
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: $maxpagesize(string^string)
+              cli:
+                cliKey: $maxpagesize
+            - parameterName: $filter(string^string)
+              cli:
+                cliKey: $filter
+            - parameterName: $expand(ListSharesExpand^constant)
+              cli:
+                cliKey: $expand
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Create
+          cli:
+            cliKey: Create
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: shareName(string^string)
+              cli:
+                cliKey: shareName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: fileShare(FileShare^object)
+              cli:
+                cliKey: fileShare
+              bodySchema: FileShare
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Update
+          cli:
+            cliKey: Update
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: shareName(string^string)
+              cli:
+                cliKey: shareName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: fileShare(FileShare^object)
+              cli:
+                cliKey: fileShare
+              bodySchema: FileShare
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Get
+          cli:
+            cliKey: Get
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: shareName(string^string)
+              cli:
+                cliKey: shareName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: $expand(GetShareExpand^constant)
+              cli:
+                cliKey: $expand
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Delete
+          cli:
+            cliKey: Delete
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: shareName(string^string)
+              cli:
+                cliKey: shareName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Restore
+          cli:
+            cliKey: Restore
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: shareName(string^string)
+              cli:
+                cliKey: shareName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: deletedShare(DeletedShare^object)
+              cli:
+                cliKey: deletedShare
+              bodySchema: DeletedShare
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: QueueServices
+      cli:
+        cliKey: QueueServices
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: SetServiceProperties
+          cli:
+            cliKey: SetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: queueServiceName(^constant)
+              cli:
+                cliKey: queueServiceName
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(QueueServiceProperties^object)
+              cli:
+                cliKey: parameters
+              bodySchema: QueueServiceProperties
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: GetServiceProperties
+          cli:
+            cliKey: GetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: queueServiceName(^constant)
+              cli:
+                cliKey: queueServiceName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: Queue
+      cli:
+        cliKey: Queue
+      operations:
+        - operationName: Create
+          cli:
+            cliKey: Create
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: queueName(string^string)
+              cli:
+                cliKey: queueName
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: queue(StorageQueue^object)
+              cli:
+                cliKey: queue
+              bodySchema: StorageQueue
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Update
+          cli:
+            cliKey: Update
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: queueName(string^string)
+              cli:
+                cliKey: queueName
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: queue(StorageQueue^object)
+              cli:
+                cliKey: queue
+              bodySchema: StorageQueue
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Get
+          cli:
+            cliKey: Get
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: queueName(string^string)
+              cli:
+                cliKey: queueName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Delete
+          cli:
+            cliKey: Delete
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: queueName(string^string)
+              cli:
+                cliKey: queueName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: $maxpagesize(string^string)
+              cli:
+                cliKey: $maxpagesize
+            - parameterName: $filter(string^string)
+              cli:
+                cliKey: $filter
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: TableServices
+      cli:
+        cliKey: TableServices
+      operations:
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: SetServiceProperties
+          cli:
+            cliKey: SetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: tableServiceName(^constant)
+              cli:
+                cliKey: tableServiceName
+            - parameterName[0]: content-type(application/json^constant)
+              cli:
+                cliKey: content-type
+            - parameterName[0]: parameters(TableServiceProperties^object)
+              cli:
+                cliKey: parameters
+              bodySchema: TableServiceProperties
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: GetServiceProperties
+          cli:
+            cliKey: GetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: tableServiceName(^constant)
+              cli:
+                cliKey: tableServiceName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+    - operationGroupName: Table
+      cli:
+        cliKey: Table
+      operations:
+        - operationName: Create
+          cli:
+            cliKey: Create
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: tableName(string^string)
+              cli:
+                cliKey: tableName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Update
+          cli:
+            cliKey: Update
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: tableName(string^string)
+              cli:
+                cliKey: tableName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Get
+          cli:
+            cliKey: Get
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: tableName(string^string)
+              cli:
+                cliKey: tableName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: Delete
+          cli:
+            cliKey: Delete
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName: tableName(string^string)
+              cli:
+                cliKey: tableName
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+        - operationName: List
+          cli:
+            cliKey: List
+          parameters:
+            - parameterName: $host(string^string)
+              cli:
+                cliKey: $host
+            - parameterName: resourceGroupName(string^string)
+              cli:
+                cliKey: resourceGroupName
+            - parameterName: accountName(string^string)
+              cli:
+                cliKey: accountName
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+              cli:
+                cliKey: ApiVersion
+            - parameterName: subscriptionId(string^string)
+              cli:
+                cliKey: subscriptionId
+            - parameterName[0]: accept(Accept^constant)
+              cli:
+                cliKey: accept
+schemas:
+  objects:
+    all:
+      - schemaName: OperationListResult
+        cli:
+          cliKey: OperationListResult
+        properties:
+          - propertyName: value(OperationListResult-value^array)
+            cli:
+              cliKey: value
+      - schemaName: Operation
+        cli:
+          cliKey: Operation
+        properties:
+          - propertyName: name(Operation-name^string)
+            cli:
+              cliKey: name
+          - propertyName: display(Operation-display^object)
+            cli:
+              cliKey: display
+          - propertyName: origin(Operation-origin^string)
+            cli:
+              cliKey: origin
+          - propertyName: OperationProperties(OperationProperties^object)
+            cli:
+              cliKey: OperationProperties
+            x-ms-client-flatten: true
+      - schemaName: Operation-display
+        cli:
+          cliKey: Operation-display
+        properties:
+          - propertyName: provider(Operation-display-provider^string)
+            cli:
+              cliKey: provider
+          - propertyName: resource(Operation-display-resource^string)
+            cli:
+              cliKey: resource
+          - propertyName: operation(Operation-display-operation^string)
+            cli:
+              cliKey: operation
+          - propertyName: description(Operation-display-description^string)
+            cli:
+              cliKey: description
+      - schemaName: OperationProperties
+        cli:
+          cliKey: OperationProperties
+        properties:
+          - propertyName: serviceSpecification(ServiceSpecification^object)
+            cli:
+              cliKey: serviceSpecification
+      - schemaName: ServiceSpecification
+        cli:
+          cliKey: ServiceSpecification
+        properties:
+          - propertyName: metricSpecifications(ServiceSpecification-metricSpecifications^array)
+            cli:
+              cliKey: metricSpecifications
+      - schemaName: MetricSpecification
+        cli:
+          cliKey: MetricSpecification
+        properties:
+          - propertyName: name(MetricSpecification-name^string)
+            cli:
+              cliKey: name
+          - propertyName: displayName(MetricSpecification-displayName^string)
+            cli:
+              cliKey: displayName
+          - propertyName: displayDescription(MetricSpecification-displayDescription^string)
+            cli:
+              cliKey: displayDescription
+          - propertyName: unit(MetricSpecification-unit^string)
+            cli:
+              cliKey: unit
+          - propertyName: dimensions(MetricSpecification-dimensions^array)
+            cli:
+              cliKey: dimensions
+          - propertyName: aggregationType(MetricSpecification-aggregationType^string)
+            cli:
+              cliKey: aggregationType
+          - propertyName: fillGapWithZero(boolean^boolean)
+            cli:
+              cliKey: fillGapWithZero
+          - propertyName: category(MetricSpecification-category^string)
+            cli:
+              cliKey: category
+          - propertyName: resourceIdDimensionNameOverride(MetricSpecification-resourceIdDimensionNameOverride^string)
+            cli:
+              cliKey: resourceIdDimensionNameOverride
+      - schemaName: Dimension
+        cli:
+          cliKey: Dimension
+        properties:
+          - propertyName: name(Dimension-name^string)
+            cli:
+              cliKey: name
+          - propertyName: displayName(Dimension-displayName^string)
+            cli:
+              cliKey: displayName
+      - schemaName: StorageSkuListResult
+        cli:
+          cliKey: StorageSkuListResult
+        properties:
+          - propertyName: value(StorageSkuListResult-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+      - schemaName: SkuInformation
+        cli:
+          cliKey: SkuInformation
+        properties:
+          - propertyName: name(SkuName^choice)
+            cli:
+              cliKey: name
+          - propertyName: tier(SkuTier^sealed-choice)
+            cli:
+              cliKey: tier
+            readOnly: true
+          - propertyName: resourceType(SkuInformation-resourceType^string)
+            cli:
+              cliKey: resourceType
+            readOnly: true
+          - propertyName: kind(Kind^choice)
+            cli:
+              cliKey: kind
+            readOnly: true
+          - propertyName: locations(SkuInformation-locations^array)
+            cli:
+              cliKey: locations
+            readOnly: true
+          - propertyName: capabilities(SkuInformation-capabilities^array)
+            cli:
+              cliKey: capabilities
+            readOnly: true
+          - propertyName: restrictions(SkuInformation-restrictions^array)
+            cli:
+              cliKey: restrictions
+      - schemaName: SKUCapability
+        cli:
+          cliKey: SKUCapability
+        properties:
+          - propertyName: name(SKUCapability-name^string)
+            cli:
+              cliKey: name
+            readOnly: true
+          - propertyName: value(SKUCapability-value^string)
+            cli:
+              cliKey: value
+            readOnly: true
+      - schemaName: Restriction
+        cli:
+          cliKey: Restriction
+        properties:
+          - propertyName: type(Restriction-type^string)
+            cli:
+              cliKey: type
+            readOnly: true
+          - propertyName: values(Restriction-values^array)
+            cli:
+              cliKey: values
+            readOnly: true
+          - propertyName: reasonCode(ReasonCode^choice)
+            cli:
+              cliKey: reasonCode
+      - schemaName: StorageAccountCheckNameAvailabilityParameters
+        cli:
+          cliKey: StorageAccountCheckNameAvailabilityParameters
+        properties:
+          - propertyName: name(StorageAccountCheckNameAvailabilityParameters-name^string)
+            cli:
+              cliKey: name
+          - propertyName: type(Type^constant)
+            cli:
+              cliKey: type
+      - schemaName: CheckNameAvailabilityResult
+        cli:
+          cliKey: CheckNameAvailabilityResult
+        properties:
+          - propertyName: nameAvailable(boolean^boolean)
+            cli:
+              cliKey: nameAvailable
+            readOnly: true
+          - propertyName: reason(Reason^sealed-choice)
+            cli:
+              cliKey: reason
+            readOnly: true
+          - propertyName: message(CheckNameAvailabilityResult-message^string)
+            cli:
+              cliKey: message
+            readOnly: true
+      - schemaName: StorageAccountCreateParameters
+        cli:
+          cliKey: StorageAccountCreateParameters
+        properties:
+          - propertyName: sku(Sku^object)
+            cli:
+              cliKey: sku
+          - propertyName: kind(Kind^choice)
+            cli:
+              cliKey: kind
+          - propertyName: location(StorageAccountCreateParameters-location^string)
+            cli:
+              cliKey: location
+          - propertyName: tags(StorageAccountCreateParameters-tags^dictionary)
+            cli:
+              cliKey: tags
+          - propertyName: identity(Identity^object)
+            cli:
+              cliKey: identity
+          - propertyName: properties(StorageAccountPropertiesCreateParameters^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+      - schemaName: Sku
+        cli:
+          cliKey: Sku
+        properties:
+          - propertyName: name(SkuName^choice)
+            cli:
+              cliKey: name
+          - propertyName: tier(SkuTier^sealed-choice)
+            cli:
+              cliKey: tier
+            readOnly: true
+      - schemaName: Identity
+        cli:
+          cliKey: Identity
+        properties:
+          - propertyName: principalId(Identity-principalId^string)
+            cli:
+              cliKey: principalId
+            readOnly: true
+          - propertyName: tenantId(Identity-tenantId^string)
+            cli:
+              cliKey: tenantId
+            readOnly: true
+          - propertyName: type(IdentityType^constant)
+            cli:
+              cliKey: type
+      - schemaName: StorageAccountPropertiesCreateParameters
+        cli:
+          cliKey: StorageAccountPropertiesCreateParameters
+        properties:
+          - propertyName: customDomain(CustomDomain^object)
+            cli:
+              cliKey: customDomain
+          - propertyName: encryption(Encryption^object)
+            cli:
+              cliKey: encryption
+          - propertyName: NetworkRuleSet(NetworkRuleSet^object)
+            cli:
+              cliKey: NetworkRuleSet
+          - propertyName: accessTier(AccessTier^sealed-choice)
+            cli:
+              cliKey: accessTier
+          - propertyName: azureFilesIdentityBasedAuthentication(AzureFilesIdentityBasedAuthentication^object)
+            cli:
+              cliKey: azureFilesIdentityBasedAuthentication
+          - propertyName: EnableHttpsTrafficOnly(EnableHttpsTrafficOnly^boolean)
+            cli:
+              cliKey: EnableHttpsTrafficOnly
+          - propertyName: IsHnsEnabled(IsHnsEnabled^boolean)
+            cli:
+              cliKey: IsHnsEnabled
+          - propertyName: largeFileSharesState(LargeFileSharesState^choice)
+            cli:
+              cliKey: largeFileSharesState
+          - propertyName: RoutingPreference(RoutingPreference^object)
+            cli:
+              cliKey: RoutingPreference
+          - propertyName: AllowBlobPublicAccess(AllowBlobPublicAccess^boolean)
+            cli:
+              cliKey: AllowBlobPublicAccess
+          - propertyName: minimumTlsVersion(MinimumTlsVersion^choice)
+            cli:
+              cliKey: minimumTlsVersion
+      - schemaName: CustomDomain
+        cli:
+          cliKey: CustomDomain
+        properties:
+          - propertyName: name(CustomDomain-name^string)
+            cli:
+              cliKey: name
+          - propertyName: useSubDomainName(boolean^boolean)
+            cli:
+              cliKey: useSubDomainName
+      - schemaName: Encryption
+        cli:
+          cliKey: Encryption
+        properties:
+          - propertyName: services(EncryptionServices^object)
+            cli:
+              cliKey: services
+          - propertyName: keySource(KeySource^choice)
+            cli:
+              cliKey: keySource
+          - propertyName: RequireInfrastructureEncryption(RequireInfrastructureEncryption^boolean)
+            cli:
+              cliKey: RequireInfrastructureEncryption
+          - propertyName: KeyVaultProperties(KeyVaultProperties^object)
+            cli:
+              cliKey: KeyVaultProperties
+      - schemaName: EncryptionServices
+        cli:
+          cliKey: EncryptionServices
+        properties:
+          - propertyName: blob(EncryptionService^object)
+            cli:
+              cliKey: blob
+          - propertyName: file(EncryptionService^object)
+            cli:
+              cliKey: file
+          - propertyName: table(EncryptionService^object)
+            cli:
+              cliKey: table
+          - propertyName: queue(EncryptionService^object)
+            cli:
+              cliKey: queue
+      - schemaName: EncryptionService
+        cli:
+          cliKey: EncryptionService
+        properties:
+          - propertyName: enabled(boolean^boolean)
+            cli:
+              cliKey: enabled
+          - propertyName: lastEnabledTime(EncryptionService-lastEnabledTime^date-time)
+            cli:
+              cliKey: lastEnabledTime
+            readOnly: true
+          - propertyName: keyType(KeyType^choice)
+            cli:
+              cliKey: keyType
+      - schemaName: KeyVaultProperties
+        cli:
+          cliKey: KeyVaultProperties
+        properties:
+          - propertyName: KeyName(KeyName^string)
+            cli:
+              cliKey: KeyName
+          - propertyName: KeyVersion(KeyVersion^string)
+            cli:
+              cliKey: KeyVersion
+          - propertyName: KeyVaultUri(KeyVaultUri^string)
+            cli:
+              cliKey: KeyVaultUri
+          - propertyName: CurrentVersionedKeyIdentifier(CurrentVersionedKeyIdentifier^string)
+            cli:
+              cliKey: CurrentVersionedKeyIdentifier
+            readOnly: true
+          - propertyName: LastKeyRotationTimestamp(LastKeyRotationTimestamp^date-time)
+            cli:
+              cliKey: LastKeyRotationTimestamp
+            readOnly: true
+      - schemaName: NetworkRuleSet
+        cli:
+          cliKey: NetworkRuleSet
+        properties:
+          - propertyName: Bypass(Bypass^choice)
+            cli:
+              cliKey: Bypass
+          - propertyName: virtualNetworkRules(NetworkRuleSet-virtualNetworkRules^array)
+            cli:
+              cliKey: virtualNetworkRules
+          - propertyName: ipRules(NetworkRuleSet-ipRules^array)
+            cli:
+              cliKey: ipRules
+          - propertyName: defaultAction(DefaultAction^sealed-choice)
+            cli:
+              cliKey: defaultAction
+      - schemaName: VirtualNetworkRule
+        cli:
+          cliKey: VirtualNetworkRule
+        properties:
+          - propertyName: VirtualNetworkResourceId(VirtualNetworkResourceId^string)
+            cli:
+              cliKey: VirtualNetworkResourceId
+          - propertyName: action(Action^constant)
+            cli:
+              cliKey: action
+          - propertyName: state(State^sealed-choice)
+            cli:
+              cliKey: state
+      - schemaName: IPRule
+        cli:
+          cliKey: IPRule
+        properties:
+          - propertyName: IPAddressOrRange(IPAddressOrRange^string)
+            cli:
+              cliKey: IPAddressOrRange
+          - propertyName: action(Action^constant)
+            cli:
+              cliKey: action
+      - schemaName: AzureFilesIdentityBasedAuthentication
+        cli:
+          cliKey: AzureFilesIdentityBasedAuthentication
+        properties:
+          - propertyName: directoryServiceOptions(DirectoryServiceOptions^choice)
+            cli:
+              cliKey: directoryServiceOptions
+          - propertyName: activeDirectoryProperties(ActiveDirectoryProperties^object)
+            cli:
+              cliKey: activeDirectoryProperties
+      - schemaName: ActiveDirectoryProperties
+        cli:
+          cliKey: ActiveDirectoryProperties
+        properties:
+          - propertyName: domainName(ActiveDirectoryProperties-domainName^string)
+            cli:
+              cliKey: domainName
+          - propertyName: netBiosDomainName(ActiveDirectoryProperties-netBiosDomainName^string)
+            cli:
+              cliKey: netBiosDomainName
+          - propertyName: forestName(ActiveDirectoryProperties-forestName^string)
+            cli:
+              cliKey: forestName
+          - propertyName: domainGuid(ActiveDirectoryProperties-domainGuid^string)
+            cli:
+              cliKey: domainGuid
+          - propertyName: domainSid(ActiveDirectoryProperties-domainSid^string)
+            cli:
+              cliKey: domainSid
+          - propertyName: azureStorageSid(ActiveDirectoryProperties-azureStorageSid^string)
+            cli:
+              cliKey: azureStorageSid
+      - schemaName: RoutingPreference
+        cli:
+          cliKey: RoutingPreference
+        properties:
+          - propertyName: routingChoice(RoutingChoice^choice)
+            cli:
+              cliKey: routingChoice
+          - propertyName: publishMicrosoftEndpoints(boolean^boolean)
+            cli:
+              cliKey: publishMicrosoftEndpoints
+          - propertyName: publishInternetEndpoints(boolean^boolean)
+            cli:
+              cliKey: publishInternetEndpoints
+      - schemaName: StorageAccount
+        cli:
+          cliKey: StorageAccount
+        properties:
+          - propertyName: sku(Sku^object)
+            cli:
+              cliKey: sku
+            readOnly: true
+          - propertyName: kind(Kind^choice)
+            cli:
+              cliKey: kind
+            readOnly: true
+          - propertyName: identity(Identity^object)
+            cli:
+              cliKey: identity
+          - propertyName: properties(StorageAccountProperties^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+      - schemaName: StorageAccountProperties
+        cli:
+          cliKey: StorageAccountProperties
+        properties:
+          - propertyName: provisioningState(ProvisioningState^sealed-choice)
+            cli:
+              cliKey: provisioningState
+            readOnly: true
+          - propertyName: primaryEndpoints(Endpoints^object)
+            cli:
+              cliKey: primaryEndpoints
+            readOnly: true
+          - propertyName: primaryLocation(StorageAccountProperties-primaryLocation^string)
+            cli:
+              cliKey: primaryLocation
+            readOnly: true
+          - propertyName: statusOfPrimary(AccountStatus^sealed-choice)
+            cli:
+              cliKey: statusOfPrimary
+            readOnly: true
+          - propertyName: lastGeoFailoverTime(StorageAccountProperties-lastGeoFailoverTime^date-time)
+            cli:
+              cliKey: lastGeoFailoverTime
+            readOnly: true
+          - propertyName: secondaryLocation(StorageAccountProperties-secondaryLocation^string)
+            cli:
+              cliKey: secondaryLocation
+            readOnly: true
+          - propertyName: statusOfSecondary(AccountStatus^sealed-choice)
+            cli:
+              cliKey: statusOfSecondary
+            readOnly: true
+          - propertyName: creationTime(StorageAccountProperties-creationTime^date-time)
+            cli:
+              cliKey: creationTime
+            readOnly: true
+          - propertyName: customDomain(CustomDomain^object)
+            cli:
+              cliKey: customDomain
+            readOnly: true
+          - propertyName: secondaryEndpoints(Endpoints^object)
+            cli:
+              cliKey: secondaryEndpoints
+            readOnly: true
+          - propertyName: encryption(Encryption^object)
+            cli:
+              cliKey: encryption
+            readOnly: true
+          - propertyName: accessTier(AccessTier^sealed-choice)
+            cli:
+              cliKey: accessTier
+            readOnly: true
+          - propertyName: azureFilesIdentityBasedAuthentication(AzureFilesIdentityBasedAuthentication^object)
+            cli:
+              cliKey: azureFilesIdentityBasedAuthentication
+          - propertyName: EnableHttpsTrafficOnly(EnableHttpsTrafficOnly^boolean)
+            cli:
+              cliKey: EnableHttpsTrafficOnly
+          - propertyName: NetworkRuleSet(NetworkRuleSet^object)
+            cli:
+              cliKey: NetworkRuleSet
+            readOnly: true
+          - propertyName: IsHnsEnabled(IsHnsEnabled^boolean)
+            cli:
+              cliKey: IsHnsEnabled
+          - propertyName: GeoReplicationStats(GeoReplicationStats^object)
+            cli:
+              cliKey: GeoReplicationStats
+            readOnly: true
+          - propertyName: FailoverInProgress(FailoverInProgress^boolean)
+            cli:
+              cliKey: FailoverInProgress
+            readOnly: true
+          - propertyName: largeFileSharesState(LargeFileSharesState^choice)
+            cli:
+              cliKey: largeFileSharesState
+          - propertyName: privateEndpointConnections(StorageAccountProperties-privateEndpointConnections^array)
+            cli:
+              cliKey: privateEndpointConnections
+            readOnly: true
+          - propertyName: RoutingPreference(RoutingPreference^object)
+            cli:
+              cliKey: RoutingPreference
+          - propertyName: BlobRestoreStatus(BlobRestoreStatus^object)
+            cli:
+              cliKey: BlobRestoreStatus
+            readOnly: true
+          - propertyName: AllowBlobPublicAccess(AllowBlobPublicAccess^boolean)
+            cli:
+              cliKey: AllowBlobPublicAccess
+          - propertyName: minimumTlsVersion(MinimumTlsVersion^choice)
+            cli:
+              cliKey: minimumTlsVersion
+      - schemaName: Endpoints
+        cli:
+          cliKey: Endpoints
+        properties:
+          - propertyName: blob(Endpoints-blob^string)
+            cli:
+              cliKey: blob
+            readOnly: true
+          - propertyName: queue(Endpoints-queue^string)
+            cli:
+              cliKey: queue
+            readOnly: true
+          - propertyName: table(Endpoints-table^string)
+            cli:
+              cliKey: table
+            readOnly: true
+          - propertyName: file(Endpoints-file^string)
+            cli:
+              cliKey: file
+            readOnly: true
+          - propertyName: web(Endpoints-web^string)
+            cli:
+              cliKey: web
+            readOnly: true
+          - propertyName: dfs(Endpoints-dfs^string)
+            cli:
+              cliKey: dfs
+            readOnly: true
+          - propertyName: microsoftEndpoints(StorageAccountMicrosoftEndpoints^object)
+            cli:
+              cliKey: microsoftEndpoints
+            x-ms-client-flatten: false
+          - propertyName: internetEndpoints(StorageAccountInternetEndpoints^object)
+            cli:
+              cliKey: internetEndpoints
+            x-ms-client-flatten: false
+      - schemaName: StorageAccountMicrosoftEndpoints
+        cli:
+          cliKey: StorageAccountMicrosoftEndpoints
+        properties:
+          - propertyName: blob(StorageAccountMicrosoftEndpoints-blob^string)
+            cli:
+              cliKey: blob
+            readOnly: true
+          - propertyName: queue(StorageAccountMicrosoftEndpoints-queue^string)
+            cli:
+              cliKey: queue
+            readOnly: true
+          - propertyName: table(StorageAccountMicrosoftEndpoints-table^string)
+            cli:
+              cliKey: table
+            readOnly: true
+          - propertyName: file(StorageAccountMicrosoftEndpoints-file^string)
+            cli:
+              cliKey: file
+            readOnly: true
+          - propertyName: web(StorageAccountMicrosoftEndpoints-web^string)
+            cli:
+              cliKey: web
+            readOnly: true
+          - propertyName: dfs(StorageAccountMicrosoftEndpoints-dfs^string)
+            cli:
+              cliKey: dfs
+            readOnly: true
+      - schemaName: StorageAccountInternetEndpoints
+        cli:
+          cliKey: StorageAccountInternetEndpoints
+        properties:
+          - propertyName: blob(StorageAccountInternetEndpoints-blob^string)
+            cli:
+              cliKey: blob
+            readOnly: true
+          - propertyName: file(StorageAccountInternetEndpoints-file^string)
+            cli:
+              cliKey: file
+            readOnly: true
+          - propertyName: web(StorageAccountInternetEndpoints-web^string)
+            cli:
+              cliKey: web
+            readOnly: true
+          - propertyName: dfs(StorageAccountInternetEndpoints-dfs^string)
+            cli:
+              cliKey: dfs
+            readOnly: true
+      - schemaName: GeoReplicationStats
+        cli:
+          cliKey: GeoReplicationStats
+        properties:
+          - propertyName: status(GeoReplicationStatus^choice)
+            cli:
+              cliKey: status
+            readOnly: true
+          - propertyName: lastSyncTime(GeoReplicationStats-lastSyncTime^date-time)
+            cli:
+              cliKey: lastSyncTime
+            readOnly: true
+          - propertyName: canFailover(boolean^boolean)
+            cli:
+              cliKey: canFailover
+            readOnly: true
+      - schemaName: PrivateEndpointConnection
+        cli:
+          cliKey: PrivateEndpointConnection
+        properties:
+          - propertyName: properties(PrivateEndpointConnectionProperties^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+      - schemaName: PrivateEndpointConnectionProperties
+        cli:
+          cliKey: PrivateEndpointConnectionProperties
+        properties:
+          - propertyName: privateEndpoint(PrivateEndpoint^object)
+            cli:
+              cliKey: privateEndpoint
+          - propertyName: privateLinkServiceConnectionState(PrivateLinkServiceConnectionState^object)
+            cli:
+              cliKey: privateLinkServiceConnectionState
+          - propertyName: provisioningState(PrivateEndpointConnectionProvisioningState^choice)
+            cli:
+              cliKey: provisioningState
+            readOnly: true
+      - schemaName: PrivateEndpoint
+        cli:
+          cliKey: PrivateEndpoint
+        properties:
+          - propertyName: id(PrivateEndpoint-id^string)
+            cli:
+              cliKey: id
+            readOnly: true
+      - schemaName: PrivateLinkServiceConnectionState
+        cli:
+          cliKey: PrivateLinkServiceConnectionState
+        properties:
+          - propertyName: status(PrivateEndpointServiceConnectionStatus^choice)
+            cli:
+              cliKey: status
+          - propertyName: description(PrivateLinkServiceConnectionState-description^string)
+            cli:
+              cliKey: description
+          - propertyName: actionRequired(PrivateLinkServiceConnectionState-actionRequired^string)
+            cli:
+              cliKey: actionRequired
+      - schemaName: Resource
+        cli:
+          cliKey: Resource
+        properties:
+          - propertyName: id(Resource-id^string)
+            cli:
+              cliKey: id
+            readOnly: true
+          - propertyName: name(Resource-name^string)
+            cli:
+              cliKey: name
+            readOnly: true
+          - propertyName: type(Resource-type^string)
+            cli:
+              cliKey: type
+            readOnly: true
+      - schemaName: BlobRestoreStatus
+        cli:
+          cliKey: BlobRestoreStatus
+        properties:
+          - propertyName: status(BlobRestoreProgressStatus^choice)
+            cli:
+              cliKey: status
+            readOnly: true
+          - propertyName: failureReason(BlobRestoreStatus-failureReason^string)
+            cli:
+              cliKey: failureReason
+            readOnly: true
+          - propertyName: restoreId(BlobRestoreStatus-restoreId^string)
+            cli:
+              cliKey: restoreId
+            readOnly: true
+          - propertyName: parameters(BlobRestoreParameters^object)
+            cli:
+              cliKey: parameters
+            readOnly: true
+      - schemaName: BlobRestoreParameters
+        cli:
+          cliKey: BlobRestoreParameters
+        properties:
+          - propertyName: timeToRestore(BlobRestoreParameters-timeToRestore^date-time)
+            cli:
+              cliKey: timeToRestore
+          - propertyName: blobRanges(BlobRestoreParameters-blobRanges^array)
+            cli:
+              cliKey: blobRanges
+      - schemaName: BlobRestoreRange
+        cli:
+          cliKey: BlobRestoreRange
+        properties:
+          - propertyName: startRange(BlobRestoreRange-startRange^string)
+            cli:
+              cliKey: startRange
+          - propertyName: endRange(BlobRestoreRange-endRange^string)
+            cli:
+              cliKey: endRange
+      - schemaName: TrackedResource
+        cli:
+          cliKey: TrackedResource
+        properties:
+          - propertyName: tags(TrackedResource-tags^dictionary)
+            cli:
+              cliKey: tags
+          - propertyName: location(TrackedResource-location^string)
+            cli:
+              cliKey: location
+      - schemaName: StorageAccountUpdateParameters
+        cli:
+          cliKey: StorageAccountUpdateParameters
+        properties:
+          - propertyName: sku(Sku^object)
+            cli:
+              cliKey: sku
+          - propertyName: tags(StorageAccountUpdateParameters-tags^dictionary)
+            cli:
+              cliKey: tags
+          - propertyName: identity(Identity^object)
+            cli:
+              cliKey: identity
+          - propertyName: properties(StorageAccountPropertiesUpdateParameters^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+          - propertyName: kind(Kind^choice)
+            cli:
+              cliKey: kind
+      - schemaName: StorageAccountPropertiesUpdateParameters
+        cli:
+          cliKey: StorageAccountPropertiesUpdateParameters
+        properties:
+          - propertyName: customDomain(CustomDomain^object)
+            cli:
+              cliKey: customDomain
+          - propertyName: encryption(Encryption^object)
+            cli:
+              cliKey: encryption
+          - propertyName: accessTier(AccessTier^sealed-choice)
+            cli:
+              cliKey: accessTier
+          - propertyName: azureFilesIdentityBasedAuthentication(AzureFilesIdentityBasedAuthentication^object)
+            cli:
+              cliKey: azureFilesIdentityBasedAuthentication
+          - propertyName: EnableHttpsTrafficOnly(EnableHttpsTrafficOnly^boolean)
+            cli:
+              cliKey: EnableHttpsTrafficOnly
+          - propertyName: NetworkRuleSet(NetworkRuleSet^object)
+            cli:
+              cliKey: NetworkRuleSet
+          - propertyName: largeFileSharesState(LargeFileSharesState^choice)
+            cli:
+              cliKey: largeFileSharesState
+          - propertyName: RoutingPreference(RoutingPreference^object)
+            cli:
+              cliKey: RoutingPreference
+          - propertyName: AllowBlobPublicAccess(AllowBlobPublicAccess^boolean)
+            cli:
+              cliKey: AllowBlobPublicAccess
+          - propertyName: minimumTlsVersion(MinimumTlsVersion^choice)
+            cli:
+              cliKey: minimumTlsVersion
+      - schemaName: StorageAccountListResult
+        cli:
+          cliKey: StorageAccountListResult
+        properties:
+          - propertyName: value(StorageAccountListResult-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+          - propertyName: nextLink(StorageAccountListResult-nextLink^string)
+            cli:
+              cliKey: nextLink
+            readOnly: true
+      - schemaName: StorageAccountListKeysResult
+        cli:
+          cliKey: StorageAccountListKeysResult
+        properties:
+          - propertyName: keys(StorageAccountListKeysResult-keys^array)
+            cli:
+              cliKey: keys
+            readOnly: true
+      - schemaName: StorageAccountKey
+        cli:
+          cliKey: StorageAccountKey
+        properties:
+          - propertyName: keyName(StorageAccountKey-keyName^string)
+            cli:
+              cliKey: keyName
+            readOnly: true
+          - propertyName: value(StorageAccountKey-value^string)
+            cli:
+              cliKey: value
+            readOnly: true
+          - propertyName: permissions(KeyPermission^sealed-choice)
+            cli:
+              cliKey: permissions
+            readOnly: true
+      - schemaName: StorageAccountRegenerateKeyParameters
+        cli:
+          cliKey: StorageAccountRegenerateKeyParameters
+        properties:
+          - propertyName: keyName(StorageAccountRegenerateKeyParameters-keyName^string)
+            cli:
+              cliKey: keyName
+      - schemaName: UsageListResult
+        cli:
+          cliKey: UsageListResult
+        properties:
+          - propertyName: value(UsageListResult-value^array)
+            cli:
+              cliKey: value
+      - schemaName: Usage
+        cli:
+          cliKey: Usage
+        properties:
+          - propertyName: unit(UsageUnit^sealed-choice)
+            cli:
+              cliKey: unit
+            readOnly: true
+          - propertyName: currentValue(integer^integer)
+            cli:
+              cliKey: currentValue
+            readOnly: true
+          - propertyName: limit(integer^integer)
+            cli:
+              cliKey: limit
+            readOnly: true
+          - propertyName: name(UsageName^object)
+            cli:
+              cliKey: name
+            readOnly: true
+      - schemaName: UsageName
+        cli:
+          cliKey: UsageName
+        properties:
+          - propertyName: value(UsageName-value^string)
+            cli:
+              cliKey: value
+            readOnly: true
+          - propertyName: localizedValue(UsageName-localizedValue^string)
+            cli:
+              cliKey: localizedValue
+            readOnly: true
+      - schemaName: AccountSasParameters
+        cli:
+          cliKey: AccountSasParameters
+        properties:
+          - propertyName: Services(Services^choice)
+            cli:
+              cliKey: Services
+          - propertyName: ResourceTypes(SignedResourceTypes^choice)
+            cli:
+              cliKey: ResourceTypes
+          - propertyName: Permissions(Permissions^choice)
+            cli:
+              cliKey: Permissions
+          - propertyName: IPAddressOrRange(IPAddressOrRange^string)
+            cli:
+              cliKey: IPAddressOrRange
+          - propertyName: Protocols(HttpProtocol^sealed-choice)
+            cli:
+              cliKey: Protocols
+          - propertyName: SharedAccessStartTime(SharedAccessStartTime^date-time)
+            cli:
+              cliKey: SharedAccessStartTime
+          - propertyName: SharedAccessExpiryTime(SharedAccessExpiryTime^date-time)
+            cli:
+              cliKey: SharedAccessExpiryTime
+          - propertyName: keyToSign(AccountSasParameters-keyToSign^string)
+            cli:
+              cliKey: keyToSign
+      - schemaName: ListAccountSasResponse
+        cli:
+          cliKey: ListAccountSasResponse
+        properties:
+          - propertyName: accountSasToken(ListAccountSasResponse-accountSasToken^string)
+            cli:
+              cliKey: accountSasToken
+            readOnly: true
+      - schemaName: ServiceSasParameters
+        cli:
+          cliKey: ServiceSasParameters
+        properties:
+          - propertyName: canonicalizedResource(ServiceSasParameters-canonicalizedResource^string)
+            cli:
+              cliKey: canonicalizedResource
+          - propertyName: Resource(signedResource^choice)
+            cli:
+              cliKey: Resource
+          - propertyName: Permissions(Permissions^choice)
+            cli:
+              cliKey: Permissions
+          - propertyName: IPAddressOrRange(IPAddressOrRange^string)
+            cli:
+              cliKey: IPAddressOrRange
+          - propertyName: Protocols(HttpProtocol^sealed-choice)
+            cli:
+              cliKey: Protocols
+          - propertyName: SharedAccessStartTime(SharedAccessStartTime^date-time)
+            cli:
+              cliKey: SharedAccessStartTime
+          - propertyName: SharedAccessExpiryTime(SharedAccessExpiryTime^date-time)
+            cli:
+              cliKey: SharedAccessExpiryTime
+          - propertyName: Identifier(Identifier^string)
+            cli:
+              cliKey: Identifier
+          - propertyName: PartitionKeyStart(PartitionKeyStart^string)
+            cli:
+              cliKey: PartitionKeyStart
+          - propertyName: PartitionKeyEnd(PartitionKeyEnd^string)
+            cli:
+              cliKey: PartitionKeyEnd
+          - propertyName: RowKeyStart(RowKeyStart^string)
+            cli:
+              cliKey: RowKeyStart
+          - propertyName: RowKeyEnd(RowKeyEnd^string)
+            cli:
+              cliKey: RowKeyEnd
+          - propertyName: keyToSign(ServiceSasParameters-keyToSign^string)
+            cli:
+              cliKey: keyToSign
+          - propertyName: CacheControl(CacheControl^string)
+            cli:
+              cliKey: CacheControl
+          - propertyName: ContentDisposition(ContentDisposition^string)
+            cli:
+              cliKey: ContentDisposition
+          - propertyName: ContentEncoding(ContentEncoding^string)
+            cli:
+              cliKey: ContentEncoding
+          - propertyName: ContentLanguage(ContentLanguage^string)
+            cli:
+              cliKey: ContentLanguage
+          - propertyName: ContentType(ContentType^string)
+            cli:
+              cliKey: ContentType
+      - schemaName: ListServiceSasResponse
+        cli:
+          cliKey: ListServiceSasResponse
+        properties:
+          - propertyName: serviceSasToken(ListServiceSasResponse-serviceSasToken^string)
+            cli:
+              cliKey: serviceSasToken
+            readOnly: true
+      - schemaName: ManagementPolicy
+        cli:
+          cliKey: ManagementPolicy
+        properties:
+          - propertyName: properties(ManagementPolicyProperties^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+      - schemaName: ManagementPolicyProperties
+        cli:
+          cliKey: ManagementPolicyProperties
+        properties:
+          - propertyName: lastModifiedTime(ManagementPolicyProperties-lastModifiedTime^date-time)
+            cli:
+              cliKey: lastModifiedTime
+            readOnly: true
+          - propertyName: policy(ManagementPolicySchema^object)
+            cli:
+              cliKey: policy
+      - schemaName: ManagementPolicySchema
+        cli:
+          cliKey: ManagementPolicySchema
+        properties:
+          - propertyName: rules(ManagementPolicySchema-rules^array)
+            cli:
+              cliKey: rules
+      - schemaName: ManagementPolicyRule
+        cli:
+          cliKey: ManagementPolicyRule
+        properties:
+          - propertyName: enabled(boolean^boolean)
+            cli:
+              cliKey: enabled
+          - propertyName: name(ManagementPolicyRule-name^string)
+            cli:
+              cliKey: name
+          - propertyName: type(RuleType^choice)
+            cli:
+              cliKey: type
+          - propertyName: definition(ManagementPolicyDefinition^object)
+            cli:
+              cliKey: definition
+      - schemaName: ManagementPolicyDefinition
+        cli:
+          cliKey: ManagementPolicyDefinition
+        properties:
+          - propertyName: actions(ManagementPolicyAction^object)
+            cli:
+              cliKey: actions
+          - propertyName: filters(ManagementPolicyFilter^object)
+            cli:
+              cliKey: filters
+      - schemaName: ManagementPolicyAction
+        cli:
+          cliKey: ManagementPolicyAction
+        properties:
+          - propertyName: baseBlob(ManagementPolicyBaseBlob^object)
+            cli:
+              cliKey: baseBlob
+          - propertyName: snapshot(ManagementPolicySnapShot^object)
+            cli:
+              cliKey: snapshot
+      - schemaName: ManagementPolicyBaseBlob
+        cli:
+          cliKey: ManagementPolicyBaseBlob
+        properties:
+          - propertyName: tierToCool(DateAfterModification^object)
+            cli:
+              cliKey: tierToCool
+          - propertyName: tierToArchive(DateAfterModification^object)
+            cli:
+              cliKey: tierToArchive
+          - propertyName: delete(DateAfterModification^object)
+            cli:
+              cliKey: delete
+      - schemaName: DateAfterModification
+        cli:
+          cliKey: DateAfterModification
+        properties:
+          - propertyName: daysAfterModificationGreaterThan(number^number)
+            cli:
+              cliKey: daysAfterModificationGreaterThan
+      - schemaName: ManagementPolicySnapShot
+        cli:
+          cliKey: ManagementPolicySnapShot
+        properties:
+          - propertyName: delete(DateAfterCreation^object)
+            cli:
+              cliKey: delete
+      - schemaName: DateAfterCreation
+        cli:
+          cliKey: DateAfterCreation
+        properties:
+          - propertyName: daysAfterCreationGreaterThan(number^number)
+            cli:
+              cliKey: daysAfterCreationGreaterThan
+      - schemaName: ManagementPolicyFilter
+        cli:
+          cliKey: ManagementPolicyFilter
+        properties:
+          - propertyName: prefixMatch(ManagementPolicyFilter-prefixMatch^array)
+            cli:
+              cliKey: prefixMatch
+          - propertyName: blobTypes(ManagementPolicyFilter-blobTypes^array)
+            cli:
+              cliKey: blobTypes
+          - propertyName: blobIndexMatch(ManagementPolicyFilter-blobIndexMatch^array)
+            cli:
+              cliKey: blobIndexMatch
+      - schemaName: TagFilter
+        cli:
+          cliKey: TagFilter
+        properties:
+          - propertyName: name(TagFilter-name^string)
+            cli:
+              cliKey: name
+          - propertyName: op(TagFilter-op^string)
+            cli:
+              cliKey: op
+          - propertyName: value(TagFilter-value^string)
+            cli:
+              cliKey: value
+      - schemaName: PrivateEndpointConnectionListResult
+        cli:
+          cliKey: PrivateEndpointConnectionListResult
+        properties:
+          - propertyName: value(PrivateEndpointConnectionListResult-value^array)
+            cli:
+              cliKey: value
+      - schemaName: ErrorResponse
+        cli:
+          cliKey: ErrorResponse
+        properties:
+          - propertyName: code(ErrorResponse-code^string)
+            cli:
+              cliKey: code
+          - propertyName: message(ErrorResponse-message^string)
+            cli:
+              cliKey: message
+      - schemaName: PrivateLinkResourceListResult
+        cli:
+          cliKey: PrivateLinkResourceListResult
+        properties:
+          - propertyName: value(PrivateLinkResourceListResult-value^array)
+            cli:
+              cliKey: value
+      - schemaName: PrivateLinkResource
+        cli:
+          cliKey: PrivateLinkResource
+        properties:
+          - propertyName: properties(PrivateLinkResourceProperties^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+      - schemaName: PrivateLinkResourceProperties
+        cli:
+          cliKey: PrivateLinkResourceProperties
+        properties:
+          - propertyName: groupId(PrivateLinkResourceProperties-groupId^string)
+            cli:
+              cliKey: groupId
+            readOnly: true
+          - propertyName: requiredMembers(PrivateLinkResourceProperties-requiredMembers^array)
+            cli:
+              cliKey: requiredMembers
+            readOnly: true
+          - propertyName: requiredZoneNames(PrivateLinkResourceProperties-requiredZoneNames^array)
+            cli:
+              cliKey: requiredZoneNames
+      - schemaName: ObjectReplicationPolicies
+        cli:
+          cliKey: ObjectReplicationPolicies
+        properties:
+          - propertyName: value(ObjectReplicationPolicies-value^array)
+            cli:
+              cliKey: value
+      - schemaName: ObjectReplicationPolicy
+        cli:
+          cliKey: ObjectReplicationPolicy
+        properties:
+          - propertyName: properties(ObjectReplicationPolicyProperties^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+      - schemaName: ObjectReplicationPolicyProperties
+        cli:
+          cliKey: ObjectReplicationPolicyProperties
+        properties:
+          - propertyName: policyId(ObjectReplicationPolicyProperties-policyId^string)
+            cli:
+              cliKey: policyId
+            readOnly: true
+          - propertyName: enabledTime(ObjectReplicationPolicyProperties-enabledTime^date-time)
+            cli:
+              cliKey: enabledTime
+            readOnly: true
+          - propertyName: sourceAccount(ObjectReplicationPolicyProperties-sourceAccount^string)
+            cli:
+              cliKey: sourceAccount
+          - propertyName: destinationAccount(ObjectReplicationPolicyProperties-destinationAccount^string)
+            cli:
+              cliKey: destinationAccount
+          - propertyName: rules(ObjectReplicationPolicyProperties-rules^array)
+            cli:
+              cliKey: rules
+      - schemaName: ObjectReplicationPolicyRule
+        cli:
+          cliKey: ObjectReplicationPolicyRule
+        properties:
+          - propertyName: ruleId(ObjectReplicationPolicyRule-ruleId^string)
+            cli:
+              cliKey: ruleId
+          - propertyName: sourceContainer(ObjectReplicationPolicyRule-sourceContainer^string)
+            cli:
+              cliKey: sourceContainer
+          - propertyName: destinationContainer(ObjectReplicationPolicyRule-destinationContainer^string)
+            cli:
+              cliKey: destinationContainer
+          - propertyName: filters(ObjectReplicationPolicyFilter^object)
+            cli:
+              cliKey: filters
+      - schemaName: ObjectReplicationPolicyFilter
+        cli:
+          cliKey: ObjectReplicationPolicyFilter
+        properties:
+          - propertyName: prefixMatch(ObjectReplicationPolicyFilter-prefixMatch^array)
+            cli:
+              cliKey: prefixMatch
+          - propertyName: minCreationTime(ObjectReplicationPolicyFilter-minCreationTime^string)
+            cli:
+              cliKey: minCreationTime
+      - schemaName: EncryptionScope
+        cli:
+          cliKey: EncryptionScope
+        properties:
+          - propertyName: EncryptionScopeProperties(EncryptionScopeProperties^object)
+            cli:
+              cliKey: EncryptionScopeProperties
+            x-ms-client-flatten: true
+      - schemaName: EncryptionScopeProperties
+        cli:
+          cliKey: EncryptionScopeProperties
+        properties:
+          - propertyName: source(EncryptionScopeSource^choice)
+            cli:
+              cliKey: source
+          - propertyName: state(EncryptionScopeState^choice)
+            cli:
+              cliKey: state
+          - propertyName: creationTime(EncryptionScopeProperties-creationTime^date-time)
+            cli:
+              cliKey: creationTime
+            readOnly: true
+          - propertyName: lastModifiedTime(EncryptionScopeProperties-lastModifiedTime^date-time)
+            cli:
+              cliKey: lastModifiedTime
+            readOnly: true
+          - propertyName: keyVaultProperties(EncryptionScopeKeyVaultProperties^object)
+            cli:
+              cliKey: keyVaultProperties
+      - schemaName: EncryptionScopeKeyVaultProperties
+        cli:
+          cliKey: EncryptionScopeKeyVaultProperties
+        properties:
+          - propertyName: keyUri(EncryptionScopeKeyVaultProperties-keyUri^string)
+            cli:
+              cliKey: keyUri
+      - schemaName: EncryptionScopeListResult
+        cli:
+          cliKey: EncryptionScopeListResult
+        properties:
+          - propertyName: value(EncryptionScopeListResult-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+          - propertyName: nextLink(EncryptionScopeListResult-nextLink^string)
+            cli:
+              cliKey: nextLink
+            readOnly: true
+      - schemaName: LocalUsers
+        cli:
+          cliKey: LocalUsers
+        properties:
+          - propertyName: value(LocalUsers-value^array)
+            cli:
+              cliKey: value
+      - schemaName: LocalUser
+        cli:
+          cliKey: LocalUser
+        properties:
+          - propertyName: properties(LocalUserProperties^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+      - schemaName: LocalUserProperties
+        cli:
+          cliKey: LocalUserProperties
+        properties:
+          - propertyName: permissionScopes(LocalUserProperties-permissionScopes^array)
+            cli:
+              cliKey: permissionScopes
+          - propertyName: homeDirectory(LocalUserProperties-homeDirectory^string)
+            cli:
+              cliKey: homeDirectory
+          - propertyName: sshAuthorizedKeys(SshAuthorizedKeys^array)
+            cli:
+              cliKey: sshAuthorizedKeys
+          - propertyName: sid(LocalUserProperties-sid^string)
+            cli:
+              cliKey: sid
+            readOnly: true
+          - propertyName: sharedKey(SharedKey^string)
+            cli:
+              cliKey: sharedKey
+            readOnly: true
+          - propertyName: hasSharedKey(boolean^boolean)
+            cli:
+              cliKey: hasSharedKey
+            readOnly: true
+          - propertyName: hasSshKey(boolean^boolean)
+            cli:
+              cliKey: hasSshKey
+            readOnly: true
+      - schemaName: PermissionScope
+        cli:
+          cliKey: PermissionScope
+        properties:
+          - propertyName: permissions(PermissionScope-permissions^string)
+            cli:
+              cliKey: permissions
+          - propertyName: service(PermissionScope-service^string)
+            cli:
+              cliKey: service
+          - propertyName: resourceName(PermissionScope-resourceName^string)
+            cli:
+              cliKey: resourceName
+      - schemaName: SshPublicKey
+        cli:
+          cliKey: SshPublicKey
+        properties:
+          - propertyName: description(SshPublicKey-description^string)
+            cli:
+              cliKey: description
+          - propertyName: key(SshPublicKey-key^string)
+            cli:
+              cliKey: key
+      - schemaName: LocalUserKeys
+        cli:
+          cliKey: LocalUserKeys
+        properties:
+          - propertyName: sshAuthorizedKeys(SshAuthorizedKeys^array)
+            cli:
+              cliKey: sshAuthorizedKeys
+          - propertyName: sharedKey(SharedKey^string)
+            cli:
+              cliKey: sharedKey
+            readOnly: true
+      - schemaName: BlobServiceItems
+        cli:
+          cliKey: BlobServiceItems
+        properties:
+          - propertyName: value(BlobServiceItems-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+      - schemaName: BlobServiceProperties
+        cli:
+          cliKey: BlobServiceProperties
+        properties:
+          - propertyName: BlobServiceProperties(BlobServiceProperties^object)
+            cli:
+              cliKey: BlobServiceProperties
+            x-ms-client-flatten: true
+          - propertyName: sku(Sku^object)
+            cli:
+              cliKey: sku
+            readOnly: true
+      - schemaName: BlobServiceProperties
+        cli:
+          cliKey: BlobServiceProperties
+        properties:
+          - propertyName: cors(CorsRules^object)
+            cli:
+              cliKey: cors
+          - propertyName: defaultServiceVersion(BlobServiceProperties-properties-defaultServiceVersion^string)
+            cli:
+              cliKey: defaultServiceVersion
+          - propertyName: deleteRetentionPolicy(DeleteRetentionPolicy^object)
+            cli:
+              cliKey: deleteRetentionPolicy
+          - propertyName: isVersioningEnabled(boolean^boolean)
+            cli:
+              cliKey: isVersioningEnabled
+          - propertyName: automaticSnapshotPolicyEnabled(boolean^boolean)
+            cli:
+              cliKey: automaticSnapshotPolicyEnabled
+          - propertyName: changeFeed(ChangeFeed^object)
+            cli:
+              cliKey: changeFeed
+          - propertyName: restorePolicy(RestorePolicyProperties^object)
+            cli:
+              cliKey: restorePolicy
+          - propertyName: containerDeleteRetentionPolicy(DeleteRetentionPolicy^object)
+            cli:
+              cliKey: containerDeleteRetentionPolicy
+      - schemaName: CorsRules
+        cli:
+          cliKey: CorsRules
+        properties:
+          - propertyName: corsRules(CorsRules-corsRules^array)
+            cli:
+              cliKey: corsRules
+      - schemaName: CorsRule
+        cli:
+          cliKey: CorsRule
+        properties:
+          - propertyName: allowedOrigins(CorsRule-allowedOrigins^array)
+            cli:
+              cliKey: allowedOrigins
+          - propertyName: allowedMethods(CorsRule-allowedMethods^array)
+            cli:
+              cliKey: allowedMethods
+          - propertyName: maxAgeInSeconds(integer^integer)
+            cli:
+              cliKey: maxAgeInSeconds
+          - propertyName: exposedHeaders(CorsRule-exposedHeaders^array)
+            cli:
+              cliKey: exposedHeaders
+          - propertyName: allowedHeaders(CorsRule-allowedHeaders^array)
+            cli:
+              cliKey: allowedHeaders
+      - schemaName: DeleteRetentionPolicy
+        cli:
+          cliKey: DeleteRetentionPolicy
+        properties:
+          - propertyName: enabled(boolean^boolean)
+            cli:
+              cliKey: enabled
+          - propertyName: days(integer^integer)
+            cli:
+              cliKey: days
+      - schemaName: ChangeFeed
+        cli:
+          cliKey: ChangeFeed
+        properties:
+          - propertyName: enabled(boolean^boolean)
+            cli:
+              cliKey: enabled
+      - schemaName: RestorePolicyProperties
+        cli:
+          cliKey: RestorePolicyProperties
+        properties:
+          - propertyName: enabled(boolean^boolean)
+            cli:
+              cliKey: enabled
+          - propertyName: days(integer^integer)
+            cli:
+              cliKey: days
+          - propertyName: lastEnabledTime(RestorePolicyProperties-lastEnabledTime^date-time)
+            cli:
+              cliKey: lastEnabledTime
+            readOnly: true
+          - propertyName: minRestoreTime(RestorePolicyProperties-minRestoreTime^date-time)
+            cli:
+              cliKey: minRestoreTime
+            readOnly: true
+      - schemaName: ListContainerItems
+        cli:
+          cliKey: ListContainerItems
+        properties:
+          - propertyName: value(ListContainerItems-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+          - propertyName: nextLink(ListContainerItems-nextLink^string)
+            cli:
+              cliKey: nextLink
+            readOnly: true
+      - schemaName: ListContainerItem
+        cli:
+          cliKey: ListContainerItem
+        properties:
+          - propertyName: properties(ContainerProperties^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+      - schemaName: ContainerProperties
+        cli:
+          cliKey: ContainerProperties
+        properties:
+          - propertyName: version(ContainerProperties-version^string)
+            cli:
+              cliKey: version
+            readOnly: true
+          - propertyName: deleted(boolean^boolean)
+            cli:
+              cliKey: deleted
+            readOnly: true
+          - propertyName: deletedTime(ContainerProperties-deletedTime^date-time)
+            cli:
+              cliKey: deletedTime
+            readOnly: true
+          - propertyName: remainingRetentionDays(integer^integer)
+            cli:
+              cliKey: remainingRetentionDays
+            readOnly: true
+          - propertyName: defaultEncryptionScope(ContainerProperties-defaultEncryptionScope^string)
+            cli:
+              cliKey: defaultEncryptionScope
+          - propertyName: denyEncryptionScopeOverride(boolean^boolean)
+            cli:
+              cliKey: denyEncryptionScopeOverride
+          - propertyName: publicAccess(PublicAccess^sealed-choice)
+            cli:
+              cliKey: publicAccess
+          - propertyName: lastModifiedTime(ContainerProperties-lastModifiedTime^date-time)
+            cli:
+              cliKey: lastModifiedTime
+            readOnly: true
+          - propertyName: leaseStatus(LeaseStatus^choice)
+            cli:
+              cliKey: leaseStatus
+            readOnly: true
+          - propertyName: leaseState(LeaseState^choice)
+            cli:
+              cliKey: leaseState
+            readOnly: true
+          - propertyName: leaseDuration(LeaseDuration^choice)
+            cli:
+              cliKey: leaseDuration
+            readOnly: true
+          - propertyName: metadata(ContainerProperties-metadata^dictionary)
+            cli:
+              cliKey: metadata
+          - propertyName: ImmutabilityPolicy(ImmutabilityPolicyProperties^object)
+            cli:
+              cliKey: ImmutabilityPolicy
+            readOnly: true
+          - propertyName: legalHold(LegalHoldProperties^object)
+            cli:
+              cliKey: legalHold
+            readOnly: true
+          - propertyName: hasLegalHold(boolean^boolean)
+            cli:
+              cliKey: hasLegalHold
+            readOnly: true
+          - propertyName: hasImmutabilityPolicy(boolean^boolean)
+            cli:
+              cliKey: hasImmutabilityPolicy
+            readOnly: true
+      - schemaName: ImmutabilityPolicyProperties
+        cli:
+          cliKey: ImmutabilityPolicyProperties
+        properties:
+          - propertyName: properties(ImmutabilityPolicyProperty^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+          - propertyName: etag(ImmutabilityPolicyProperties-etag^string)
+            cli:
+              cliKey: etag
+            readOnly: true
+          - propertyName: updateHistory(ImmutabilityPolicyProperties-updateHistory^array)
+            cli:
+              cliKey: updateHistory
+            readOnly: true
+      - schemaName: ImmutabilityPolicyProperty
+        cli:
+          cliKey: ImmutabilityPolicyProperty
+        properties:
+          - propertyName: immutabilityPeriodSinceCreationInDays(integer^integer)
+            cli:
+              cliKey: immutabilityPeriodSinceCreationInDays
+          - propertyName: state(ImmutabilityPolicyState^choice)
+            cli:
+              cliKey: state
+            readOnly: true
+          - propertyName: allowProtectedAppendWrites(boolean^boolean)
+            cli:
+              cliKey: allowProtectedAppendWrites
+      - schemaName: UpdateHistoryProperty
+        cli:
+          cliKey: UpdateHistoryProperty
+        properties:
+          - propertyName: update(ImmutabilityPolicyUpdateType^choice)
+            cli:
+              cliKey: update
+            readOnly: true
+          - propertyName: immutabilityPeriodSinceCreationInDays(integer^integer)
+            cli:
+              cliKey: immutabilityPeriodSinceCreationInDays
+            readOnly: true
+          - propertyName: timestamp(UpdateHistoryProperty-timestamp^date-time)
+            cli:
+              cliKey: timestamp
+            readOnly: true
+          - propertyName: objectIdentifier(UpdateHistoryProperty-objectIdentifier^string)
+            cli:
+              cliKey: objectIdentifier
+            readOnly: true
+          - propertyName: tenantId(UpdateHistoryProperty-tenantId^string)
+            cli:
+              cliKey: tenantId
+            readOnly: true
+          - propertyName: upn(UpdateHistoryProperty-upn^string)
+            cli:
+              cliKey: upn
+            readOnly: true
+      - schemaName: LegalHoldProperties
+        cli:
+          cliKey: LegalHoldProperties
+        properties:
+          - propertyName: hasLegalHold(boolean^boolean)
+            cli:
+              cliKey: hasLegalHold
+            readOnly: true
+          - propertyName: tags(LegalHoldProperties-tags^array)
+            cli:
+              cliKey: tags
+      - schemaName: TagProperty
+        cli:
+          cliKey: TagProperty
+        properties:
+          - propertyName: tag(TagProperty-tag^string)
+            cli:
+              cliKey: tag
+            readOnly: true
+          - propertyName: timestamp(TagProperty-timestamp^date-time)
+            cli:
+              cliKey: timestamp
+            readOnly: true
+          - propertyName: objectIdentifier(TagProperty-objectIdentifier^string)
+            cli:
+              cliKey: objectIdentifier
+            readOnly: true
+          - propertyName: tenantId(TagProperty-tenantId^string)
+            cli:
+              cliKey: tenantId
+            readOnly: true
+          - propertyName: upn(TagProperty-upn^string)
+            cli:
+              cliKey: upn
+            readOnly: true
+      - schemaName: AzureEntityResource
+        cli:
+          cliKey: AzureEntityResource
+        properties:
+          - propertyName: etag(AzureEntityResource-etag^string)
+            cli:
+              cliKey: etag
+            readOnly: true
+      - schemaName: BlobContainer
+        cli:
+          cliKey: BlobContainer
+        properties:
+          - propertyName: ContainerProperties(ContainerProperties^object)
+            cli:
+              cliKey: ContainerProperties
+            x-ms-client-flatten: true
+      - schemaName: LegalHold
+        cli:
+          cliKey: LegalHold
+        properties:
+          - propertyName: hasLegalHold(boolean^boolean)
+            cli:
+              cliKey: hasLegalHold
+            readOnly: true
+          - propertyName: tags(LegalHold-tags^array)
+            cli:
+              cliKey: tags
+      - schemaName: ImmutabilityPolicy
+        cli:
+          cliKey: ImmutabilityPolicy
+        properties:
+          - propertyName: properties(ImmutabilityPolicyProperty^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+      - schemaName: LeaseContainerRequest
+        cli:
+          cliKey: LeaseContainerRequest
+        properties:
+          - propertyName: action(LeaseContainerRequest-action^choice)
+            cli:
+              cliKey: action
+          - propertyName: leaseId(LeaseContainerRequest-leaseId^string)
+            cli:
+              cliKey: leaseId
+          - propertyName: breakPeriod(integer^integer)
+            cli:
+              cliKey: breakPeriod
+          - propertyName: leaseDuration(integer^integer)
+            cli:
+              cliKey: leaseDuration
+          - propertyName: proposedLeaseId(LeaseContainerRequest-proposedLeaseId^string)
+            cli:
+              cliKey: proposedLeaseId
+      - schemaName: LeaseContainerResponse
+        cli:
+          cliKey: LeaseContainerResponse
+        properties:
+          - propertyName: leaseId(LeaseContainerResponse-leaseId^string)
+            cli:
+              cliKey: leaseId
+          - propertyName: leaseTimeSeconds(LeaseContainerResponse-leaseTimeSeconds^string)
+            cli:
+              cliKey: leaseTimeSeconds
+      - schemaName: FileServiceItems
+        cli:
+          cliKey: FileServiceItems
+        properties:
+          - propertyName: value(FileServiceItems-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+      - schemaName: FileServiceProperties
+        cli:
+          cliKey: FileServiceProperties
+        properties:
+          - propertyName: FileServiceProperties(FileServiceProperties^object)
+            cli:
+              cliKey: FileServiceProperties
+            x-ms-client-flatten: true
+          - propertyName: sku(Sku^object)
+            cli:
+              cliKey: sku
+            readOnly: true
+      - schemaName: FileServiceProperties
+        cli:
+          cliKey: FileServiceProperties
+        properties:
+          - propertyName: cors(CorsRules^object)
+            cli:
+              cliKey: cors
+          - propertyName: shareDeleteRetentionPolicy(DeleteRetentionPolicy^object)
+            cli:
+              cliKey: shareDeleteRetentionPolicy
+      - schemaName: CloudError
+        cli:
+          cliKey: CloudError
+        properties:
+          - propertyName: error(CloudErrorBody^object)
+            cli:
+              cliKey: error
+      - schemaName: CloudErrorBody
+        cli:
+          cliKey: CloudErrorBody
+        properties:
+          - propertyName: code(CloudErrorBody-code^string)
+            cli:
+              cliKey: code
+          - propertyName: message(CloudErrorBody-message^string)
+            cli:
+              cliKey: message
+          - propertyName: target(CloudErrorBody-target^string)
+            cli:
+              cliKey: target
+          - propertyName: details(CloudErrorBody-details^array)
+            cli:
+              cliKey: details
+      - schemaName: FileShareItems
+        cli:
+          cliKey: FileShareItems
+        properties:
+          - propertyName: value(FileShareItems-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+          - propertyName: nextLink(FileShareItems-nextLink^string)
+            cli:
+              cliKey: nextLink
+            readOnly: true
+      - schemaName: FileShareItem
+        cli:
+          cliKey: FileShareItem
+        properties:
+          - propertyName: properties(FileShareProperties^object)
+            cli:
+              cliKey: properties
+            x-ms-client-flatten: true
+      - schemaName: FileShareProperties
+        cli:
+          cliKey: FileShareProperties
+        properties:
+          - propertyName: lastModifiedTime(FileShareProperties-lastModifiedTime^date-time)
+            cli:
+              cliKey: lastModifiedTime
+            readOnly: true
+          - propertyName: metadata(FileShareProperties-metadata^dictionary)
+            cli:
+              cliKey: metadata
+          - propertyName: shareQuota(integer^integer)
+            cli:
+              cliKey: shareQuota
+          - propertyName: enabledProtocols(EnabledProtocols^choice)
+            cli:
+              cliKey: enabledProtocols
+          - propertyName: rootSquash(RootSquashType^choice)
+            cli:
+              cliKey: rootSquash
+          - propertyName: version(FileShareProperties-version^string)
+            cli:
+              cliKey: version
+            readOnly: true
+          - propertyName: deleted(boolean^boolean)
+            cli:
+              cliKey: deleted
+            readOnly: true
+          - propertyName: deletedTime(FileShareProperties-deletedTime^date-time)
+            cli:
+              cliKey: deletedTime
+            readOnly: true
+          - propertyName: remainingRetentionDays(integer^integer)
+            cli:
+              cliKey: remainingRetentionDays
+            readOnly: true
+          - propertyName: accessTier(ShareAccessTier^choice)
+            cli:
+              cliKey: accessTier
+          - propertyName: accessTierChangeTime(FileShareProperties-accessTierChangeTime^date-time)
+            cli:
+              cliKey: accessTierChangeTime
+            readOnly: true
+          - propertyName: accessTierStatus(FileShareProperties-accessTierStatus^string)
+            cli:
+              cliKey: accessTierStatus
+            readOnly: true
+          - propertyName: shareUsageBytes(integer^integer)
+            cli:
+              cliKey: shareUsageBytes
+            readOnly: true
+      - schemaName: FileShare
+        cli:
+          cliKey: FileShare
+        properties:
+          - propertyName: FileShareProperties(FileShareProperties^object)
+            cli:
+              cliKey: FileShareProperties
+            x-ms-client-flatten: true
+      - schemaName: DeletedShare
+        cli:
+          cliKey: DeletedShare
+        properties:
+          - propertyName: deletedShareName(DeletedShare-deletedShareName^string)
+            cli:
+              cliKey: deletedShareName
+          - propertyName: deletedShareVersion(DeletedShare-deletedShareVersion^string)
+            cli:
+              cliKey: deletedShareVersion
+      - schemaName: ListQueueServices
+        cli:
+          cliKey: ListQueueServices
+        properties:
+          - propertyName: value(ListQueueServices-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+      - schemaName: QueueServiceProperties
+        cli:
+          cliKey: QueueServiceProperties
+        properties:
+          - propertyName: QueueServiceProperties(QueueServiceProperties^object)
+            cli:
+              cliKey: QueueServiceProperties
+            x-ms-client-flatten: true
+      - schemaName: QueueServiceProperties
+        cli:
+          cliKey: QueueServiceProperties
+        properties:
+          - propertyName: cors(CorsRules^object)
+            cli:
+              cliKey: cors
+      - schemaName: StorageQueue
+        cli:
+          cliKey: StorageQueue
+        properties:
+          - propertyName: QueueProperties(QueueProperties^object)
+            cli:
+              cliKey: QueueProperties
+            x-ms-client-flatten: true
+      - schemaName: QueueProperties
+        cli:
+          cliKey: QueueProperties
+        properties:
+          - propertyName: metadata(QueueProperties-metadata^dictionary)
+            cli:
+              cliKey: metadata
+          - propertyName: approximateMessageCount(integer^integer)
+            cli:
+              cliKey: approximateMessageCount
+            readOnly: true
+      - schemaName: ListQueueResource
+        cli:
+          cliKey: ListQueueResource
+        properties:
+          - propertyName: value(ListQueueResource-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+          - propertyName: nextLink(ListQueueResource-nextLink^string)
+            cli:
+              cliKey: nextLink
+            readOnly: true
+      - schemaName: ListQueue
+        cli:
+          cliKey: ListQueue
+        properties:
+          - propertyName: QueueProperties(ListQueueProperties^object)
+            cli:
+              cliKey: QueueProperties
+            x-ms-client-flatten: true
+      - schemaName: ListQueueProperties
+        cli:
+          cliKey: ListQueueProperties
+        properties:
+          - propertyName: metadata(ListQueueProperties-metadata^dictionary)
+            cli:
+              cliKey: metadata
+      - schemaName: ListTableServices
+        cli:
+          cliKey: ListTableServices
+        properties:
+          - propertyName: value(ListTableServices-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+      - schemaName: TableServiceProperties
+        cli:
+          cliKey: TableServiceProperties
+        properties:
+          - propertyName: TableServiceProperties(TableServiceProperties^object)
+            cli:
+              cliKey: TableServiceProperties
+            x-ms-client-flatten: true
+      - schemaName: TableServiceProperties
+        cli:
+          cliKey: TableServiceProperties
+        properties:
+          - propertyName: cors(CorsRules^object)
+            cli:
+              cliKey: cors
+      - schemaName: Table
+        cli:
+          cliKey: Table
+        properties:
+          - propertyName: TableProperties(TableProperties^object)
+            cli:
+              cliKey: TableProperties
+            x-ms-client-flatten: true
+      - schemaName: TableProperties
+        cli:
+          cliKey: TableProperties
+        properties:
+          - propertyName: tableName(TableProperties-tableName^string)
+            cli:
+              cliKey: tableName
+            readOnly: true
+      - schemaName: ListTableResource
+        cli:
+          cliKey: ListTableResource
+        properties:
+          - propertyName: value(ListTableResource-value^array)
+            cli:
+              cliKey: value
+            readOnly: true
+          - propertyName: nextLink(ListTableResource-nextLink^string)
+            cli:
+              cliKey: nextLink
+            readOnly: true
+  choices:
+    all:
+      - choiceName: SkuName
+        cli:
+          cliKey: SkuName
+        choiceValues:
+          - choiceValue: Standard_LRS
+            cli:
+              cliKey: Standard_LRS
+          - choiceValue: Standard_GRS
+            cli:
+              cliKey: Standard_GRS
+          - choiceValue: Standard_RAGRS
+            cli:
+              cliKey: Standard_RAGRS
+          - choiceValue: Standard_ZRS
+            cli:
+              cliKey: Standard_ZRS
+          - choiceValue: Premium_LRS
+            cli:
+              cliKey: Premium_LRS
+          - choiceValue: Premium_ZRS
+            cli:
+              cliKey: Premium_ZRS
+          - choiceValue: Standard_GZRS
+            cli:
+              cliKey: Standard_GZRS
+          - choiceValue: Standard_RAGZRS
+            cli:
+              cliKey: Standard_RAGZRS
+      - choiceName: Kind
+        cli:
+          cliKey: Kind
+        choiceValues:
+          - choiceValue: Storage
+            cli:
+              cliKey: Storage
+          - choiceValue: StorageV2
+            cli:
+              cliKey: StorageV2
+          - choiceValue: BlobStorage
+            cli:
+              cliKey: BlobStorage
+          - choiceValue: FileStorage
+            cli:
+              cliKey: FileStorage
+          - choiceValue: BlockBlobStorage
+            cli:
+              cliKey: BlockBlobStorage
+      - choiceName: ReasonCode
+        cli:
+          cliKey: ReasonCode
+        choiceValues:
+          - choiceValue: QuotaId
+            cli:
+              cliKey: QuotaId
+          - choiceValue: NotAvailableForSubscription
+            cli:
+              cliKey: NotAvailableForSubscription
+      - choiceName: KeyType
+        cli:
+          cliKey: KeyType
+        choiceValues:
+          - choiceValue: Service
+            cli:
+              cliKey: Service
+          - choiceValue: Account
+            cli:
+              cliKey: Account
+      - choiceName: KeySource
+        cli:
+          cliKey: KeySource
+        choiceValues:
+          - choiceValue: Microsoft.Storage
+            cli:
+              cliKey: Microsoft.Storage
+          - choiceValue: Microsoft.Keyvault
+            cli:
+              cliKey: Microsoft.Keyvault
+      - choiceName: Bypass
+        cli:
+          cliKey: Bypass
+        choiceValues:
+          - choiceValue: None
+            cli:
+              cliKey: None
+          - choiceValue: Logging
+            cli:
+              cliKey: Logging
+          - choiceValue: Metrics
+            cli:
+              cliKey: Metrics
+          - choiceValue: AzureServices
+            cli:
+              cliKey: AzureServices
+      - choiceName: DirectoryServiceOptions
+        cli:
+          cliKey: DirectoryServiceOptions
+        choiceValues:
+          - choiceValue: None
+            cli:
+              cliKey: None
+          - choiceValue: AADDS
+            cli:
+              cliKey: AADDS
+          - choiceValue: AD
+            cli:
+              cliKey: AD
+      - choiceName: LargeFileSharesState
+        cli:
+          cliKey: LargeFileSharesState
+        choiceValues:
+          - choiceValue: Disabled
+            cli:
+              cliKey: Disabled
+          - choiceValue: Enabled
+            cli:
+              cliKey: Enabled
+      - choiceName: RoutingChoice
+        cli:
+          cliKey: RoutingChoice
+        choiceValues:
+          - choiceValue: MicrosoftRouting
+            cli:
+              cliKey: MicrosoftRouting
+          - choiceValue: InternetRouting
+            cli:
+              cliKey: InternetRouting
+      - choiceName: MinimumTlsVersion
+        cli:
+          cliKey: MinimumTlsVersion
+        choiceValues:
+          - choiceValue: TLS1_0
+            cli:
+              cliKey: TLS1_0
+          - choiceValue: TLS1_1
+            cli:
+              cliKey: TLS1_1
+          - choiceValue: TLS1_2
+            cli:
+              cliKey: TLS1_2
+      - choiceName: GeoReplicationStatus
+        cli:
+          cliKey: GeoReplicationStatus
+        choiceValues:
+          - choiceValue: Live
+            cli:
+              cliKey: Live
+          - choiceValue: Bootstrap
+            cli:
+              cliKey: Bootstrap
+          - choiceValue: Unavailable
+            cli:
+              cliKey: Unavailable
+      - choiceName: PrivateEndpointServiceConnectionStatus
+        cli:
+          cliKey: PrivateEndpointServiceConnectionStatus
+        choiceValues:
+          - choiceValue: Pending
+            cli:
+              cliKey: Pending
+          - choiceValue: Approved
+            cli:
+              cliKey: Approved
+          - choiceValue: Rejected
+            cli:
+              cliKey: Rejected
+      - choiceName: PrivateEndpointConnectionProvisioningState
+        cli:
+          cliKey: PrivateEndpointConnectionProvisioningState
+        choiceValues:
+          - choiceValue: Succeeded
+            cli:
+              cliKey: Succeeded
+          - choiceValue: Creating
+            cli:
+              cliKey: Creating
+          - choiceValue: Deleting
+            cli:
+              cliKey: Deleting
+          - choiceValue: Failed
+            cli:
+              cliKey: Failed
+      - choiceName: BlobRestoreProgressStatus
+        cli:
+          cliKey: BlobRestoreProgressStatus
+        choiceValues:
+          - choiceValue: InProgress
+            cli:
+              cliKey: InProgress
+          - choiceValue: Complete
+            cli:
+              cliKey: Complete
+          - choiceValue: Failed
+            cli:
+              cliKey: Failed
+      - choiceName: Services
+        cli:
+          cliKey: Services
+        choiceValues:
+          - choiceValue: b
+            cli:
+              cliKey: b
+          - choiceValue: q
+            cli:
+              cliKey: q
+          - choiceValue: t
+            cli:
+              cliKey: t
+          - choiceValue: f
+            cli:
+              cliKey: f
+      - choiceName: SignedResourceTypes
+        cli:
+          cliKey: SignedResourceTypes
+        choiceValues:
+          - choiceValue: s
+            cli:
+              cliKey: s
+          - choiceValue: c
+            cli:
+              cliKey: c
+          - choiceValue: o
+            cli:
+              cliKey: o
+      - choiceName: Permissions
+        cli:
+          cliKey: Permissions
+        choiceValues:
+          - choiceValue: r
+            cli:
+              cliKey: r
+          - choiceValue: d
+            cli:
+              cliKey: d
+          - choiceValue: w
+            cli:
+              cliKey: w
+          - choiceValue: l
+            cli:
+              cliKey: l
+          - choiceValue: a
+            cli:
+              cliKey: a
+          - choiceValue: c
+            cli:
+              cliKey: c
+          - choiceValue: u
+            cli:
+              cliKey: u
+          - choiceValue: p
+            cli:
+              cliKey: p
+      - choiceName: signedResource
+        cli:
+          cliKey: signedResource
+        choiceValues:
+          - choiceValue: b
+            cli:
+              cliKey: b
+          - choiceValue: c
+            cli:
+              cliKey: c
+          - choiceValue: f
+            cli:
+              cliKey: f
+          - choiceValue: s
+            cli:
+              cliKey: s
+      - choiceName: ManagementPolicyName
+        cli:
+          cliKey: ManagementPolicyName
+        choiceValues:
+          - choiceValue: default
+            cli:
+              cliKey: default
+      - choiceName: RuleType
+        cli:
+          cliKey: RuleType
+        choiceValues:
+          - choiceValue: Lifecycle
+            cli:
+              cliKey: Lifecycle
+      - choiceName: EncryptionScopeSource
+        cli:
+          cliKey: EncryptionScopeSource
+        choiceValues:
+          - choiceValue: Microsoft.Storage
+            cli:
+              cliKey: Microsoft.Storage
+          - choiceValue: Microsoft.KeyVault
+            cli:
+              cliKey: Microsoft.KeyVault
+      - choiceName: EncryptionScopeState
+        cli:
+          cliKey: EncryptionScopeState
+        choiceValues:
+          - choiceValue: Enabled
+            cli:
+              cliKey: Enabled
+          - choiceValue: Disabled
+            cli:
+              cliKey: Disabled
+      - choiceName: CorsRule-allowedMethodsItem
+        cli:
+          cliKey: CorsRule-allowedMethodsItem
+        choiceValues:
+          - choiceValue: DELETE
+            cli:
+              cliKey: DELETE
+          - choiceValue: GET
+            cli:
+              cliKey: GET
+          - choiceValue: HEAD
+            cli:
+              cliKey: HEAD
+          - choiceValue: MERGE
+            cli:
+              cliKey: MERGE
+          - choiceValue: POST
+            cli:
+              cliKey: POST
+          - choiceValue: OPTIONS
+            cli:
+              cliKey: OPTIONS
+          - choiceValue: PUT
+            cli:
+              cliKey: PUT
+      - choiceName: ListContainersInclude
+        cli:
+          cliKey: ListContainersInclude
+        choiceValues:
+          - choiceValue: deleted
+            cli:
+              cliKey: deleted
+      - choiceName: LeaseStatus
+        cli:
+          cliKey: LeaseStatus
+        choiceValues:
+          - choiceValue: Locked
+            cli:
+              cliKey: Locked
+          - choiceValue: Unlocked
+            cli:
+              cliKey: Unlocked
+      - choiceName: LeaseState
+        cli:
+          cliKey: LeaseState
+        choiceValues:
+          - choiceValue: Available
+            cli:
+              cliKey: Available
+          - choiceValue: Leased
+            cli:
+              cliKey: Leased
+          - choiceValue: Expired
+            cli:
+              cliKey: Expired
+          - choiceValue: Breaking
+            cli:
+              cliKey: Breaking
+          - choiceValue: Broken
+            cli:
+              cliKey: Broken
+      - choiceName: LeaseDuration
+        cli:
+          cliKey: LeaseDuration
+        choiceValues:
+          - choiceValue: Infinite
+            cli:
+              cliKey: Infinite
+          - choiceValue: Fixed
+            cli:
+              cliKey: Fixed
+      - choiceName: ImmutabilityPolicyState
+        cli:
+          cliKey: ImmutabilityPolicyState
+        choiceValues:
+          - choiceValue: Locked
+            cli:
+              cliKey: Locked
+          - choiceValue: Unlocked
+            cli:
+              cliKey: Unlocked
+      - choiceName: ImmutabilityPolicyUpdateType
+        cli:
+          cliKey: ImmutabilityPolicyUpdateType
+        choiceValues:
+          - choiceValue: put
+            cli:
+              cliKey: put
+          - choiceValue: lock
+            cli:
+              cliKey: lock
+          - choiceValue: extend
+            cli:
+              cliKey: extend
+      - choiceName: LeaseContainerRequest-action
+        cli:
+          cliKey: LeaseContainerRequest-action
+        choiceValues:
+          - choiceValue: Acquire
+            cli:
+              cliKey: Acquire
+          - choiceValue: Renew
+            cli:
+              cliKey: Renew
+          - choiceValue: Change
+            cli:
+              cliKey: Change
+          - choiceValue: Release
+            cli:
+              cliKey: Release
+          - choiceValue: Break
+            cli:
+              cliKey: Break
+      - choiceName: EnabledProtocols
+        cli:
+          cliKey: EnabledProtocols
+        choiceValues:
+          - choiceValue: SMB
+            cli:
+              cliKey: SMB
+          - choiceValue: NFS
+            cli:
+              cliKey: NFS
+      - choiceName: RootSquashType
+        cli:
+          cliKey: RootSquashType
+        choiceValues:
+          - choiceValue: NoRootSquash
+            cli:
+              cliKey: NoRootSquash
+          - choiceValue: RootSquash
+            cli:
+              cliKey: RootSquash
+          - choiceValue: AllSquash
+            cli:
+              cliKey: AllSquash
+      - choiceName: ShareAccessTier
+        cli:
+          cliKey: ShareAccessTier
+        choiceValues:
+          - choiceValue: TransactionOptimized
+            cli:
+              cliKey: TransactionOptimized
+          - choiceValue: Hot
+            cli:
+              cliKey: Hot
+          - choiceValue: Cool
+            cli:
+              cliKey: Cool
+          - choiceValue: Premium
+            cli:
+              cliKey: Premium
+      - choiceName: SkuTier
+        cli:
+          cliKey: SkuTier
+        choiceValues:
+          - choiceValue: Standard
+            cli:
+              cliKey: Standard
+          - choiceValue: Premium
+            cli:
+              cliKey: Premium
+      - choiceName: Reason
+        cli:
+          cliKey: Reason
+        choiceValues:
+          - choiceValue: AccountNameInvalid
+            cli:
+              cliKey: AccountNameInvalid
+          - choiceValue: AlreadyExists
+            cli:
+              cliKey: AlreadyExists
+      - choiceName: State
+        cli:
+          cliKey: State
+        choiceValues:
+          - choiceValue: provisioning
+            cli:
+              cliKey: provisioning
+          - choiceValue: deprovisioning
+            cli:
+              cliKey: deprovisioning
+          - choiceValue: succeeded
+            cli:
+              cliKey: succeeded
+          - choiceValue: failed
+            cli:
+              cliKey: failed
+          - choiceValue: networkSourceDeleted
+            cli:
+              cliKey: networkSourceDeleted
+      - choiceName: DefaultAction
+        cli:
+          cliKey: DefaultAction
+        choiceValues:
+          - choiceValue: Allow
+            cli:
+              cliKey: Allow
+          - choiceValue: Deny
+            cli:
+              cliKey: Deny
+      - choiceName: AccessTier
+        cli:
+          cliKey: AccessTier
+        choiceValues:
+          - choiceValue: Hot
+            cli:
+              cliKey: Hot
+          - choiceValue: Cool
+            cli:
+              cliKey: Cool
+      - choiceName: ProvisioningState
+        cli:
+          cliKey: ProvisioningState
+        choiceValues:
+          - choiceValue: Creating
+            cli:
+              cliKey: Creating
+          - choiceValue: ResolvingDNS
+            cli:
+              cliKey: ResolvingDNS
+          - choiceValue: Succeeded
+            cli:
+              cliKey: Succeeded
+      - choiceName: AccountStatus
+        cli:
+          cliKey: AccountStatus
+        choiceValues:
+          - choiceValue: available
+            cli:
+              cliKey: available
+          - choiceValue: unavailable
+            cli:
+              cliKey: unavailable
+      - choiceName: StorageAccountExpand
+        cli:
+          cliKey: StorageAccountExpand
+        choiceValues:
+          - choiceValue: geoReplicationStats
+            cli:
+              cliKey: geoReplicationStats
+          - choiceValue: blobRestoreStatus
+            cli:
+              cliKey: blobRestoreStatus
+      - choiceName: KeyPermission
+        cli:
+          cliKey: KeyPermission
+        choiceValues:
+          - choiceValue: Read
+            cli:
+              cliKey: Read
+          - choiceValue: Full
+            cli:
+              cliKey: Full
+      - choiceName: UsageUnit
+        cli:
+          cliKey: UsageUnit
+        choiceValues:
+          - choiceValue: Count
+            cli:
+              cliKey: Count
+          - choiceValue: Bytes
+            cli:
+              cliKey: Bytes
+          - choiceValue: Seconds
+            cli:
+              cliKey: Seconds
+          - choiceValue: Percent
+            cli:
+              cliKey: Percent
+          - choiceValue: CountsPerSecond
+            cli:
+              cliKey: CountsPerSecond
+          - choiceValue: BytesPerSecond
+            cli:
+              cliKey: BytesPerSecond
+      - choiceName: HttpProtocol
+        cli:
+          cliKey: HttpProtocol
+        choiceValues:
+          - choiceValue: https,http
+            cli:
+              cliKey: https,http
+          - choiceValue: https
+            cli:
+              cliKey: https
+      - choiceName: PublicAccess
+        cli:
+          cliKey: PublicAccess
+        choiceValues:
+          - choiceValue: Container
+            cli:
+              cliKey: Container
+          - choiceValue: Blob
+            cli:
+              cliKey: Blob
+          - choiceValue: None
+            cli:
+              cliKey: None

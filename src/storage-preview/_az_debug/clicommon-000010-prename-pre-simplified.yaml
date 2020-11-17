@@ -1,0 +1,1903 @@
+operationGroups:
+  all:
+    - operationGroupName: Operations
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: Skus
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: StorageAccounts
+      operations:
+        - operationName: CheckNameAvailability
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: accountName(StorageAccountCheckNameAvailabilityParameters^object)
+              bodySchema: StorageAccountCheckNameAvailabilityParameters
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Create
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(StorageAccountCreateParameters^object)
+              bodySchema: StorageAccountCreateParameters
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Delete
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+        - operationName: GetProperties
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: $expand(StorageAccountExpand^sealed-choice)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Update
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(StorageAccountUpdateParameters^object)
+              bodySchema: StorageAccountUpdateParameters
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: ListByResourceGroup
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: ListKeys
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: $expand(ListKeyExpand^constant)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: RegenerateKey
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: regenerateKey(StorageAccountRegenerateKeyParameters^object)
+              bodySchema: StorageAccountRegenerateKeyParameters
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: ListAccountSAS
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(AccountSasParameters^object)
+              bodySchema: AccountSasParameters
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: ListServiceSAS
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(ServiceSasParameters^object)
+              bodySchema: ServiceSasParameters
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Failover
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+        - operationName: RestoreBlobRanges
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(BlobRestoreParameters^object)
+              bodySchema: BlobRestoreParameters
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: RevokeUserDelegationKeys
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+    - operationGroupName: Usages
+      operations:
+        - operationName: ListByLocation
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: location(string^string)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: ManagementPolicies
+      operations:
+        - operationName: Get
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: managementPolicyName(ManagementPolicyName^choice)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: CreateOrUpdate
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: managementPolicyName(ManagementPolicyName^choice)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: properties(ManagementPolicy^object)
+              bodySchema: ManagementPolicy
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Delete
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: managementPolicyName(ManagementPolicyName^choice)
+    - operationGroupName: PrivateEndpointConnections
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Get
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: privateEndpointConnectionName(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Put
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: privateEndpointConnectionName(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: properties(PrivateEndpointConnection^object)
+              bodySchema: PrivateEndpointConnection
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Delete
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: privateEndpointConnectionName(string^string)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: PrivateLinkResources
+      operations:
+        - operationName: ListByStorageAccount
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: ObjectReplicationPolicies
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Get
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: objectReplicationPolicyId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: CreateOrUpdate
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: objectReplicationPolicyId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: properties(ObjectReplicationPolicy^object)
+              bodySchema: ObjectReplicationPolicy
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Delete
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: objectReplicationPolicyId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: EncryptionScopes
+      operations:
+        - operationName: Put
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: encryptionScopeName(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: encryptionScope(EncryptionScope^object)
+              bodySchema: EncryptionScope
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Patch
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: encryptionScopeName(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: encryptionScope(EncryptionScope^object)
+              bodySchema: EncryptionScope
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Get
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: encryptionScopeName(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: LocalUsers
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Get
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: username(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: CreateOrUpdate
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: username(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: properties(LocalUser^object)
+              bodySchema: LocalUser
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Delete
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: username(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: ListKeys
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: username(string^string)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: BlobServices
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: SetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: BlobServicesName(^constant)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(BlobServiceProperties^object)
+              bodySchema: BlobServiceProperties
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: GetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: BlobServicesName(^constant)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: BlobContainers
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: $maxpagesize(string^string)
+            - parameterName: $filter(string^string)
+            - parameterName: $include(ListContainersInclude^choice)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Create
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: blobContainer(BlobContainer^object)
+              bodySchema: BlobContainer
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Update
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: blobContainer(BlobContainer^object)
+              bodySchema: BlobContainer
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Get
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Delete
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+        - operationName: SetLegalHold
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: LegalHold(LegalHold^object)
+              bodySchema: LegalHold
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: ClearLegalHold
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: LegalHold(LegalHold^object)
+              bodySchema: LegalHold
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: CreateOrUpdateImmutabilityPolicy
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: immutabilityPolicyName(^constant)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: If-Match(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(ImmutabilityPolicy^object)
+              bodySchema: ImmutabilityPolicy
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: GetImmutabilityPolicy
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: immutabilityPolicyName(^constant)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: If-Match(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: DeleteImmutabilityPolicy
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: immutabilityPolicyName(^constant)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: If-Match(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: LockImmutabilityPolicy
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: If-Match(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: ExtendImmutabilityPolicy
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: If-Match(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(ImmutabilityPolicy^object)
+              bodySchema: ImmutabilityPolicy
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Lease
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: containerName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(LeaseContainerRequest^object)
+              bodySchema: LeaseContainerRequest
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: FileServices
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: SetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: FileServicesName(^constant)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(FileServiceProperties^object)
+              bodySchema: FileServiceProperties
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: GetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: FileServicesName(^constant)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: FileShares
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: $maxpagesize(string^string)
+            - parameterName: $filter(string^string)
+            - parameterName: $expand(ListSharesExpand^constant)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Create
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: shareName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: fileShare(FileShare^object)
+              bodySchema: FileShare
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Update
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: shareName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: fileShare(FileShare^object)
+              bodySchema: FileShare
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Get
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: shareName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: $expand(GetShareExpand^constant)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Delete
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: shareName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Restore
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: shareName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: deletedShare(DeletedShare^object)
+              bodySchema: DeletedShare
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: QueueServices
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: SetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: queueServiceName(^constant)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(QueueServiceProperties^object)
+              bodySchema: QueueServiceProperties
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: GetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: queueServiceName(^constant)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: Queue
+      operations:
+        - operationName: Create
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: queueName(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: queue(StorageQueue^object)
+              bodySchema: StorageQueue
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Update
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: queueName(string^string)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: queue(StorageQueue^object)
+              bodySchema: StorageQueue
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Get
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: queueName(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Delete
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: queueName(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: $maxpagesize(string^string)
+            - parameterName: $filter(string^string)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: TableServices
+      operations:
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: SetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: tableServiceName(^constant)
+            - parameterName[0]: content-type(application/json^constant)
+            - parameterName[0]: parameters(TableServiceProperties^object)
+              bodySchema: TableServiceProperties
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: GetServiceProperties
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: tableServiceName(^constant)
+            - parameterName[0]: accept(Accept^constant)
+    - operationGroupName: Table
+      operations:
+        - operationName: Create
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: tableName(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Update
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: tableName(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Get
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: tableName(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: Delete
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName: tableName(string^string)
+            - parameterName[0]: accept(Accept^constant)
+        - operationName: List
+          parameters:
+            - parameterName: $host(string^string)
+            - parameterName: resourceGroupName(string^string)
+            - parameterName: accountName(string^string)
+            - parameterName: ApiVersion(ApiVersion-2019-06-01^constant)
+            - parameterName: subscriptionId(string^string)
+            - parameterName[0]: accept(Accept^constant)
+schemas:
+  objects:
+    all:
+      - schemaName: OperationListResult
+        properties:
+          - propertyName: value(OperationListResult-value^array)
+      - schemaName: Operation
+        properties:
+          - propertyName: name(Operation-name^string)
+          - propertyName: display(Operation-display^object)
+          - propertyName: origin(Operation-origin^string)
+          - propertyName: OperationProperties(OperationProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: Operation-display
+        properties:
+          - propertyName: provider(Operation-display-provider^string)
+          - propertyName: resource(Operation-display-resource^string)
+          - propertyName: operation(Operation-display-operation^string)
+          - propertyName: description(Operation-display-description^string)
+      - schemaName: OperationProperties
+        properties:
+          - propertyName: serviceSpecification(ServiceSpecification^object)
+      - schemaName: ServiceSpecification
+        properties:
+          - propertyName: metricSpecifications(ServiceSpecification-metricSpecifications^array)
+      - schemaName: MetricSpecification
+        properties:
+          - propertyName: name(MetricSpecification-name^string)
+          - propertyName: displayName(MetricSpecification-displayName^string)
+          - propertyName: displayDescription(MetricSpecification-displayDescription^string)
+          - propertyName: unit(MetricSpecification-unit^string)
+          - propertyName: dimensions(MetricSpecification-dimensions^array)
+          - propertyName: aggregationType(MetricSpecification-aggregationType^string)
+          - propertyName: fillGapWithZero(boolean^boolean)
+          - propertyName: category(MetricSpecification-category^string)
+          - propertyName: resourceIdDimensionNameOverride(MetricSpecification-resourceIdDimensionNameOverride^string)
+      - schemaName: Dimension
+        properties:
+          - propertyName: name(Dimension-name^string)
+          - propertyName: displayName(Dimension-displayName^string)
+      - schemaName: StorageSkuListResult
+        properties:
+          - propertyName: value(StorageSkuListResult-value^array)
+            readOnly: true
+      - schemaName: SkuInformation
+        properties:
+          - propertyName: name(SkuName^choice)
+          - propertyName: tier(SkuTier^sealed-choice)
+            readOnly: true
+          - propertyName: resourceType(SkuInformation-resourceType^string)
+            readOnly: true
+          - propertyName: kind(Kind^choice)
+            readOnly: true
+          - propertyName: locations(SkuInformation-locations^array)
+            readOnly: true
+          - propertyName: capabilities(SkuInformation-capabilities^array)
+            readOnly: true
+          - propertyName: restrictions(SkuInformation-restrictions^array)
+      - schemaName: SKUCapability
+        properties:
+          - propertyName: name(SKUCapability-name^string)
+            readOnly: true
+          - propertyName: value(SKUCapability-value^string)
+            readOnly: true
+      - schemaName: Restriction
+        properties:
+          - propertyName: type(Restriction-type^string)
+            readOnly: true
+          - propertyName: values(Restriction-values^array)
+            readOnly: true
+          - propertyName: reasonCode(ReasonCode^choice)
+      - schemaName: StorageAccountCheckNameAvailabilityParameters
+        properties:
+          - propertyName: name(StorageAccountCheckNameAvailabilityParameters-name^string)
+          - propertyName: type(Type^constant)
+      - schemaName: CheckNameAvailabilityResult
+        properties:
+          - propertyName: nameAvailable(boolean^boolean)
+            readOnly: true
+          - propertyName: reason(Reason^sealed-choice)
+            readOnly: true
+          - propertyName: message(CheckNameAvailabilityResult-message^string)
+            readOnly: true
+      - schemaName: StorageAccountCreateParameters
+        properties:
+          - propertyName: sku(Sku^object)
+          - propertyName: kind(Kind^choice)
+          - propertyName: location(StorageAccountCreateParameters-location^string)
+          - propertyName: tags(StorageAccountCreateParameters-tags^dictionary)
+          - propertyName: identity(Identity^object)
+          - propertyName: properties(StorageAccountPropertiesCreateParameters^object)
+            x-ms-client-flatten: true
+      - schemaName: Sku
+        properties:
+          - propertyName: name(SkuName^choice)
+          - propertyName: tier(SkuTier^sealed-choice)
+            readOnly: true
+      - schemaName: Identity
+        properties:
+          - propertyName: principalId(Identity-principalId^string)
+            readOnly: true
+          - propertyName: tenantId(Identity-tenantId^string)
+            readOnly: true
+          - propertyName: type(IdentityType^constant)
+      - schemaName: StorageAccountPropertiesCreateParameters
+        properties:
+          - propertyName: customDomain(CustomDomain^object)
+          - propertyName: encryption(Encryption^object)
+          - propertyName: NetworkRuleSet(NetworkRuleSet^object)
+          - propertyName: accessTier(AccessTier^sealed-choice)
+          - propertyName: azureFilesIdentityBasedAuthentication(AzureFilesIdentityBasedAuthentication^object)
+          - propertyName: EnableHttpsTrafficOnly(EnableHttpsTrafficOnly^boolean)
+          - propertyName: IsHnsEnabled(IsHnsEnabled^boolean)
+          - propertyName: largeFileSharesState(LargeFileSharesState^choice)
+          - propertyName: RoutingPreference(RoutingPreference^object)
+          - propertyName: AllowBlobPublicAccess(AllowBlobPublicAccess^boolean)
+          - propertyName: minimumTlsVersion(MinimumTlsVersion^choice)
+      - schemaName: CustomDomain
+        properties:
+          - propertyName: name(CustomDomain-name^string)
+          - propertyName: useSubDomainName(boolean^boolean)
+      - schemaName: Encryption
+        properties:
+          - propertyName: services(EncryptionServices^object)
+          - propertyName: keySource(KeySource^choice)
+          - propertyName: RequireInfrastructureEncryption(RequireInfrastructureEncryption^boolean)
+          - propertyName: KeyVaultProperties(KeyVaultProperties^object)
+      - schemaName: EncryptionServices
+        properties:
+          - propertyName: blob(EncryptionService^object)
+          - propertyName: file(EncryptionService^object)
+          - propertyName: table(EncryptionService^object)
+          - propertyName: queue(EncryptionService^object)
+      - schemaName: EncryptionService
+        properties:
+          - propertyName: enabled(boolean^boolean)
+          - propertyName: lastEnabledTime(EncryptionService-lastEnabledTime^date-time)
+            readOnly: true
+          - propertyName: keyType(KeyType^choice)
+      - schemaName: KeyVaultProperties
+        properties:
+          - propertyName: KeyName(KeyName^string)
+          - propertyName: KeyVersion(KeyVersion^string)
+          - propertyName: KeyVaultUri(KeyVaultUri^string)
+          - propertyName: CurrentVersionedKeyIdentifier(CurrentVersionedKeyIdentifier^string)
+            readOnly: true
+          - propertyName: LastKeyRotationTimestamp(LastKeyRotationTimestamp^date-time)
+            readOnly: true
+      - schemaName: NetworkRuleSet
+        properties:
+          - propertyName: Bypass(Bypass^choice)
+          - propertyName: virtualNetworkRules(NetworkRuleSet-virtualNetworkRules^array)
+          - propertyName: ipRules(NetworkRuleSet-ipRules^array)
+          - propertyName: defaultAction(DefaultAction^sealed-choice)
+      - schemaName: VirtualNetworkRule
+        properties:
+          - propertyName: VirtualNetworkResourceId(VirtualNetworkResourceId^string)
+          - propertyName: action(Action^constant)
+          - propertyName: state(State^sealed-choice)
+      - schemaName: IPRule
+        properties:
+          - propertyName: IPAddressOrRange(IPAddressOrRange^string)
+          - propertyName: action(Action^constant)
+      - schemaName: AzureFilesIdentityBasedAuthentication
+        properties:
+          - propertyName: directoryServiceOptions(DirectoryServiceOptions^choice)
+          - propertyName: activeDirectoryProperties(ActiveDirectoryProperties^object)
+      - schemaName: ActiveDirectoryProperties
+        properties:
+          - propertyName: domainName(ActiveDirectoryProperties-domainName^string)
+          - propertyName: netBiosDomainName(ActiveDirectoryProperties-netBiosDomainName^string)
+          - propertyName: forestName(ActiveDirectoryProperties-forestName^string)
+          - propertyName: domainGuid(ActiveDirectoryProperties-domainGuid^string)
+          - propertyName: domainSid(ActiveDirectoryProperties-domainSid^string)
+          - propertyName: azureStorageSid(ActiveDirectoryProperties-azureStorageSid^string)
+      - schemaName: RoutingPreference
+        properties:
+          - propertyName: routingChoice(RoutingChoice^choice)
+          - propertyName: publishMicrosoftEndpoints(boolean^boolean)
+          - propertyName: publishInternetEndpoints(boolean^boolean)
+      - schemaName: StorageAccount
+        properties:
+          - propertyName: sku(Sku^object)
+            readOnly: true
+          - propertyName: kind(Kind^choice)
+            readOnly: true
+          - propertyName: identity(Identity^object)
+          - propertyName: properties(StorageAccountProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: StorageAccountProperties
+        properties:
+          - propertyName: provisioningState(ProvisioningState^sealed-choice)
+            readOnly: true
+          - propertyName: primaryEndpoints(Endpoints^object)
+            readOnly: true
+          - propertyName: primaryLocation(StorageAccountProperties-primaryLocation^string)
+            readOnly: true
+          - propertyName: statusOfPrimary(AccountStatus^sealed-choice)
+            readOnly: true
+          - propertyName: lastGeoFailoverTime(StorageAccountProperties-lastGeoFailoverTime^date-time)
+            readOnly: true
+          - propertyName: secondaryLocation(StorageAccountProperties-secondaryLocation^string)
+            readOnly: true
+          - propertyName: statusOfSecondary(AccountStatus^sealed-choice)
+            readOnly: true
+          - propertyName: creationTime(StorageAccountProperties-creationTime^date-time)
+            readOnly: true
+          - propertyName: customDomain(CustomDomain^object)
+            readOnly: true
+          - propertyName: secondaryEndpoints(Endpoints^object)
+            readOnly: true
+          - propertyName: encryption(Encryption^object)
+            readOnly: true
+          - propertyName: accessTier(AccessTier^sealed-choice)
+            readOnly: true
+          - propertyName: azureFilesIdentityBasedAuthentication(AzureFilesIdentityBasedAuthentication^object)
+          - propertyName: EnableHttpsTrafficOnly(EnableHttpsTrafficOnly^boolean)
+          - propertyName: NetworkRuleSet(NetworkRuleSet^object)
+            readOnly: true
+          - propertyName: IsHnsEnabled(IsHnsEnabled^boolean)
+          - propertyName: GeoReplicationStats(GeoReplicationStats^object)
+            readOnly: true
+          - propertyName: FailoverInProgress(FailoverInProgress^boolean)
+            readOnly: true
+          - propertyName: largeFileSharesState(LargeFileSharesState^choice)
+          - propertyName: privateEndpointConnections(StorageAccountProperties-privateEndpointConnections^array)
+            readOnly: true
+          - propertyName: RoutingPreference(RoutingPreference^object)
+          - propertyName: BlobRestoreStatus(BlobRestoreStatus^object)
+            readOnly: true
+          - propertyName: AllowBlobPublicAccess(AllowBlobPublicAccess^boolean)
+          - propertyName: minimumTlsVersion(MinimumTlsVersion^choice)
+      - schemaName: Endpoints
+        properties:
+          - propertyName: blob(Endpoints-blob^string)
+            readOnly: true
+          - propertyName: queue(Endpoints-queue^string)
+            readOnly: true
+          - propertyName: table(Endpoints-table^string)
+            readOnly: true
+          - propertyName: file(Endpoints-file^string)
+            readOnly: true
+          - propertyName: web(Endpoints-web^string)
+            readOnly: true
+          - propertyName: dfs(Endpoints-dfs^string)
+            readOnly: true
+          - propertyName: microsoftEndpoints(StorageAccountMicrosoftEndpoints^object)
+            x-ms-client-flatten: false
+          - propertyName: internetEndpoints(StorageAccountInternetEndpoints^object)
+            x-ms-client-flatten: false
+      - schemaName: StorageAccountMicrosoftEndpoints
+        properties:
+          - propertyName: blob(StorageAccountMicrosoftEndpoints-blob^string)
+            readOnly: true
+          - propertyName: queue(StorageAccountMicrosoftEndpoints-queue^string)
+            readOnly: true
+          - propertyName: table(StorageAccountMicrosoftEndpoints-table^string)
+            readOnly: true
+          - propertyName: file(StorageAccountMicrosoftEndpoints-file^string)
+            readOnly: true
+          - propertyName: web(StorageAccountMicrosoftEndpoints-web^string)
+            readOnly: true
+          - propertyName: dfs(StorageAccountMicrosoftEndpoints-dfs^string)
+            readOnly: true
+      - schemaName: StorageAccountInternetEndpoints
+        properties:
+          - propertyName: blob(StorageAccountInternetEndpoints-blob^string)
+            readOnly: true
+          - propertyName: file(StorageAccountInternetEndpoints-file^string)
+            readOnly: true
+          - propertyName: web(StorageAccountInternetEndpoints-web^string)
+            readOnly: true
+          - propertyName: dfs(StorageAccountInternetEndpoints-dfs^string)
+            readOnly: true
+      - schemaName: GeoReplicationStats
+        properties:
+          - propertyName: status(GeoReplicationStatus^choice)
+            readOnly: true
+          - propertyName: lastSyncTime(GeoReplicationStats-lastSyncTime^date-time)
+            readOnly: true
+          - propertyName: canFailover(boolean^boolean)
+            readOnly: true
+      - schemaName: PrivateEndpointConnection
+        properties:
+          - propertyName: properties(PrivateEndpointConnectionProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: PrivateEndpointConnectionProperties
+        properties:
+          - propertyName: privateEndpoint(PrivateEndpoint^object)
+          - propertyName: privateLinkServiceConnectionState(PrivateLinkServiceConnectionState^object)
+          - propertyName: provisioningState(PrivateEndpointConnectionProvisioningState^choice)
+            readOnly: true
+      - schemaName: PrivateEndpoint
+        properties:
+          - propertyName: id(PrivateEndpoint-id^string)
+            readOnly: true
+      - schemaName: PrivateLinkServiceConnectionState
+        properties:
+          - propertyName: status(PrivateEndpointServiceConnectionStatus^choice)
+          - propertyName: description(PrivateLinkServiceConnectionState-description^string)
+          - propertyName: actionRequired(PrivateLinkServiceConnectionState-actionRequired^string)
+      - schemaName: Resource
+        properties:
+          - propertyName: id(Resource-id^string)
+            readOnly: true
+          - propertyName: name(Resource-name^string)
+            readOnly: true
+          - propertyName: type(Resource-type^string)
+            readOnly: true
+      - schemaName: BlobRestoreStatus
+        properties:
+          - propertyName: status(BlobRestoreProgressStatus^choice)
+            readOnly: true
+          - propertyName: failureReason(BlobRestoreStatus-failureReason^string)
+            readOnly: true
+          - propertyName: restoreId(BlobRestoreStatus-restoreId^string)
+            readOnly: true
+          - propertyName: parameters(BlobRestoreParameters^object)
+            readOnly: true
+      - schemaName: BlobRestoreParameters
+        properties:
+          - propertyName: timeToRestore(BlobRestoreParameters-timeToRestore^date-time)
+          - propertyName: blobRanges(BlobRestoreParameters-blobRanges^array)
+      - schemaName: BlobRestoreRange
+        properties:
+          - propertyName: startRange(BlobRestoreRange-startRange^string)
+          - propertyName: endRange(BlobRestoreRange-endRange^string)
+      - schemaName: TrackedResource
+        properties:
+          - propertyName: tags(TrackedResource-tags^dictionary)
+          - propertyName: location(TrackedResource-location^string)
+      - schemaName: StorageAccountUpdateParameters
+        properties:
+          - propertyName: sku(Sku^object)
+          - propertyName: tags(StorageAccountUpdateParameters-tags^dictionary)
+          - propertyName: identity(Identity^object)
+          - propertyName: properties(StorageAccountPropertiesUpdateParameters^object)
+            x-ms-client-flatten: true
+          - propertyName: kind(Kind^choice)
+      - schemaName: StorageAccountPropertiesUpdateParameters
+        properties:
+          - propertyName: customDomain(CustomDomain^object)
+          - propertyName: encryption(Encryption^object)
+          - propertyName: accessTier(AccessTier^sealed-choice)
+          - propertyName: azureFilesIdentityBasedAuthentication(AzureFilesIdentityBasedAuthentication^object)
+          - propertyName: EnableHttpsTrafficOnly(EnableHttpsTrafficOnly^boolean)
+          - propertyName: NetworkRuleSet(NetworkRuleSet^object)
+          - propertyName: largeFileSharesState(LargeFileSharesState^choice)
+          - propertyName: RoutingPreference(RoutingPreference^object)
+          - propertyName: AllowBlobPublicAccess(AllowBlobPublicAccess^boolean)
+          - propertyName: minimumTlsVersion(MinimumTlsVersion^choice)
+      - schemaName: StorageAccountListResult
+        properties:
+          - propertyName: value(StorageAccountListResult-value^array)
+            readOnly: true
+          - propertyName: nextLink(StorageAccountListResult-nextLink^string)
+            readOnly: true
+      - schemaName: StorageAccountListKeysResult
+        properties:
+          - propertyName: keys(StorageAccountListKeysResult-keys^array)
+            readOnly: true
+      - schemaName: StorageAccountKey
+        properties:
+          - propertyName: keyName(StorageAccountKey-keyName^string)
+            readOnly: true
+          - propertyName: value(StorageAccountKey-value^string)
+            readOnly: true
+          - propertyName: permissions(KeyPermission^sealed-choice)
+            readOnly: true
+      - schemaName: StorageAccountRegenerateKeyParameters
+        properties:
+          - propertyName: keyName(StorageAccountRegenerateKeyParameters-keyName^string)
+      - schemaName: UsageListResult
+        properties:
+          - propertyName: value(UsageListResult-value^array)
+      - schemaName: Usage
+        properties:
+          - propertyName: unit(UsageUnit^sealed-choice)
+            readOnly: true
+          - propertyName: currentValue(integer^integer)
+            readOnly: true
+          - propertyName: limit(integer^integer)
+            readOnly: true
+          - propertyName: name(UsageName^object)
+            readOnly: true
+      - schemaName: UsageName
+        properties:
+          - propertyName: value(UsageName-value^string)
+            readOnly: true
+          - propertyName: localizedValue(UsageName-localizedValue^string)
+            readOnly: true
+      - schemaName: AccountSasParameters
+        properties:
+          - propertyName: Services(Services^choice)
+          - propertyName: ResourceTypes(SignedResourceTypes^choice)
+          - propertyName: Permissions(Permissions^choice)
+          - propertyName: IPAddressOrRange(IPAddressOrRange^string)
+          - propertyName: Protocols(HttpProtocol^sealed-choice)
+          - propertyName: SharedAccessStartTime(SharedAccessStartTime^date-time)
+          - propertyName: SharedAccessExpiryTime(SharedAccessExpiryTime^date-time)
+          - propertyName: keyToSign(AccountSasParameters-keyToSign^string)
+      - schemaName: ListAccountSasResponse
+        properties:
+          - propertyName: accountSasToken(ListAccountSasResponse-accountSasToken^string)
+            readOnly: true
+      - schemaName: ServiceSasParameters
+        properties:
+          - propertyName: canonicalizedResource(ServiceSasParameters-canonicalizedResource^string)
+          - propertyName: Resource(signedResource^choice)
+          - propertyName: Permissions(Permissions^choice)
+          - propertyName: IPAddressOrRange(IPAddressOrRange^string)
+          - propertyName: Protocols(HttpProtocol^sealed-choice)
+          - propertyName: SharedAccessStartTime(SharedAccessStartTime^date-time)
+          - propertyName: SharedAccessExpiryTime(SharedAccessExpiryTime^date-time)
+          - propertyName: Identifier(Identifier^string)
+          - propertyName: PartitionKeyStart(PartitionKeyStart^string)
+          - propertyName: PartitionKeyEnd(PartitionKeyEnd^string)
+          - propertyName: RowKeyStart(RowKeyStart^string)
+          - propertyName: RowKeyEnd(RowKeyEnd^string)
+          - propertyName: keyToSign(ServiceSasParameters-keyToSign^string)
+          - propertyName: CacheControl(CacheControl^string)
+          - propertyName: ContentDisposition(ContentDisposition^string)
+          - propertyName: ContentEncoding(ContentEncoding^string)
+          - propertyName: ContentLanguage(ContentLanguage^string)
+          - propertyName: ContentType(ContentType^string)
+      - schemaName: ListServiceSasResponse
+        properties:
+          - propertyName: serviceSasToken(ListServiceSasResponse-serviceSasToken^string)
+            readOnly: true
+      - schemaName: ManagementPolicy
+        properties:
+          - propertyName: properties(ManagementPolicyProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: ManagementPolicyProperties
+        properties:
+          - propertyName: lastModifiedTime(ManagementPolicyProperties-lastModifiedTime^date-time)
+            readOnly: true
+          - propertyName: policy(ManagementPolicySchema^object)
+      - schemaName: ManagementPolicySchema
+        properties:
+          - propertyName: rules(ManagementPolicySchema-rules^array)
+      - schemaName: ManagementPolicyRule
+        properties:
+          - propertyName: enabled(boolean^boolean)
+          - propertyName: name(ManagementPolicyRule-name^string)
+          - propertyName: type(RuleType^choice)
+          - propertyName: definition(ManagementPolicyDefinition^object)
+      - schemaName: ManagementPolicyDefinition
+        properties:
+          - propertyName: actions(ManagementPolicyAction^object)
+          - propertyName: filters(ManagementPolicyFilter^object)
+      - schemaName: ManagementPolicyAction
+        properties:
+          - propertyName: baseBlob(ManagementPolicyBaseBlob^object)
+          - propertyName: snapshot(ManagementPolicySnapShot^object)
+      - schemaName: ManagementPolicyBaseBlob
+        properties:
+          - propertyName: tierToCool(DateAfterModification^object)
+          - propertyName: tierToArchive(DateAfterModification^object)
+          - propertyName: delete(DateAfterModification^object)
+      - schemaName: DateAfterModification
+        properties:
+          - propertyName: daysAfterModificationGreaterThan(number^number)
+      - schemaName: ManagementPolicySnapShot
+        properties:
+          - propertyName: delete(DateAfterCreation^object)
+      - schemaName: DateAfterCreation
+        properties:
+          - propertyName: daysAfterCreationGreaterThan(number^number)
+      - schemaName: ManagementPolicyFilter
+        properties:
+          - propertyName: prefixMatch(ManagementPolicyFilter-prefixMatch^array)
+          - propertyName: blobTypes(ManagementPolicyFilter-blobTypes^array)
+          - propertyName: blobIndexMatch(ManagementPolicyFilter-blobIndexMatch^array)
+      - schemaName: TagFilter
+        properties:
+          - propertyName: name(TagFilter-name^string)
+          - propertyName: op(TagFilter-op^string)
+          - propertyName: value(TagFilter-value^string)
+      - schemaName: PrivateEndpointConnectionListResult
+        properties:
+          - propertyName: value(PrivateEndpointConnectionListResult-value^array)
+      - schemaName: ErrorResponse
+        properties:
+          - propertyName: code(ErrorResponse-code^string)
+          - propertyName: message(ErrorResponse-message^string)
+      - schemaName: PrivateLinkResourceListResult
+        properties:
+          - propertyName: value(PrivateLinkResourceListResult-value^array)
+      - schemaName: PrivateLinkResource
+        properties:
+          - propertyName: properties(PrivateLinkResourceProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: PrivateLinkResourceProperties
+        properties:
+          - propertyName: groupId(PrivateLinkResourceProperties-groupId^string)
+            readOnly: true
+          - propertyName: requiredMembers(PrivateLinkResourceProperties-requiredMembers^array)
+            readOnly: true
+          - propertyName: requiredZoneNames(PrivateLinkResourceProperties-requiredZoneNames^array)
+      - schemaName: ObjectReplicationPolicies
+        properties:
+          - propertyName: value(ObjectReplicationPolicies-value^array)
+      - schemaName: ObjectReplicationPolicy
+        properties:
+          - propertyName: properties(ObjectReplicationPolicyProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: ObjectReplicationPolicyProperties
+        properties:
+          - propertyName: policyId(ObjectReplicationPolicyProperties-policyId^string)
+            readOnly: true
+          - propertyName: enabledTime(ObjectReplicationPolicyProperties-enabledTime^date-time)
+            readOnly: true
+          - propertyName: sourceAccount(ObjectReplicationPolicyProperties-sourceAccount^string)
+          - propertyName: destinationAccount(ObjectReplicationPolicyProperties-destinationAccount^string)
+          - propertyName: rules(ObjectReplicationPolicyProperties-rules^array)
+      - schemaName: ObjectReplicationPolicyRule
+        properties:
+          - propertyName: ruleId(ObjectReplicationPolicyRule-ruleId^string)
+          - propertyName: sourceContainer(ObjectReplicationPolicyRule-sourceContainer^string)
+          - propertyName: destinationContainer(ObjectReplicationPolicyRule-destinationContainer^string)
+          - propertyName: filters(ObjectReplicationPolicyFilter^object)
+      - schemaName: ObjectReplicationPolicyFilter
+        properties:
+          - propertyName: prefixMatch(ObjectReplicationPolicyFilter-prefixMatch^array)
+          - propertyName: minCreationTime(ObjectReplicationPolicyFilter-minCreationTime^string)
+      - schemaName: EncryptionScope
+        properties:
+          - propertyName: EncryptionScopeProperties(EncryptionScopeProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: EncryptionScopeProperties
+        properties:
+          - propertyName: source(EncryptionScopeSource^choice)
+          - propertyName: state(EncryptionScopeState^choice)
+          - propertyName: creationTime(EncryptionScopeProperties-creationTime^date-time)
+            readOnly: true
+          - propertyName: lastModifiedTime(EncryptionScopeProperties-lastModifiedTime^date-time)
+            readOnly: true
+          - propertyName: keyVaultProperties(EncryptionScopeKeyVaultProperties^object)
+      - schemaName: EncryptionScopeKeyVaultProperties
+        properties:
+          - propertyName: keyUri(EncryptionScopeKeyVaultProperties-keyUri^string)
+      - schemaName: EncryptionScopeListResult
+        properties:
+          - propertyName: value(EncryptionScopeListResult-value^array)
+            readOnly: true
+          - propertyName: nextLink(EncryptionScopeListResult-nextLink^string)
+            readOnly: true
+      - schemaName: LocalUsers
+        properties:
+          - propertyName: value(LocalUsers-value^array)
+      - schemaName: LocalUser
+        properties:
+          - propertyName: properties(LocalUserProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: LocalUserProperties
+        properties:
+          - propertyName: permissionScopes(LocalUserProperties-permissionScopes^array)
+          - propertyName: homeDirectory(LocalUserProperties-homeDirectory^string)
+          - propertyName: sshAuthorizedKeys(SshAuthorizedKeys^array)
+          - propertyName: sid(LocalUserProperties-sid^string)
+            readOnly: true
+          - propertyName: sharedKey(SharedKey^string)
+            readOnly: true
+          - propertyName: hasSharedKey(boolean^boolean)
+            readOnly: true
+          - propertyName: hasSshKey(boolean^boolean)
+            readOnly: true
+      - schemaName: PermissionScope
+        properties:
+          - propertyName: permissions(PermissionScope-permissions^string)
+          - propertyName: service(PermissionScope-service^string)
+          - propertyName: resourceName(PermissionScope-resourceName^string)
+      - schemaName: SshPublicKey
+        properties:
+          - propertyName: description(SshPublicKey-description^string)
+          - propertyName: key(SshPublicKey-key^string)
+      - schemaName: LocalUserKeys
+        properties:
+          - propertyName: sshAuthorizedKeys(SshAuthorizedKeys^array)
+          - propertyName: sharedKey(SharedKey^string)
+            readOnly: true
+      - schemaName: BlobServiceItems
+        properties:
+          - propertyName: value(BlobServiceItems-value^array)
+            readOnly: true
+      - schemaName: BlobServiceProperties
+        properties:
+          - propertyName: BlobServiceProperties(BlobServiceProperties^object)
+            x-ms-client-flatten: true
+          - propertyName: sku(Sku^object)
+            readOnly: true
+      - schemaName: BlobServiceProperties
+        properties:
+          - propertyName: cors(CorsRules^object)
+          - propertyName: defaultServiceVersion(BlobServiceProperties-properties-defaultServiceVersion^string)
+          - propertyName: deleteRetentionPolicy(DeleteRetentionPolicy^object)
+          - propertyName: isVersioningEnabled(boolean^boolean)
+          - propertyName: automaticSnapshotPolicyEnabled(boolean^boolean)
+          - propertyName: changeFeed(ChangeFeed^object)
+          - propertyName: restorePolicy(RestorePolicyProperties^object)
+          - propertyName: containerDeleteRetentionPolicy(DeleteRetentionPolicy^object)
+      - schemaName: CorsRules
+        properties:
+          - propertyName: corsRules(CorsRules-corsRules^array)
+      - schemaName: CorsRule
+        properties:
+          - propertyName: allowedOrigins(CorsRule-allowedOrigins^array)
+          - propertyName: allowedMethods(CorsRule-allowedMethods^array)
+          - propertyName: maxAgeInSeconds(integer^integer)
+          - propertyName: exposedHeaders(CorsRule-exposedHeaders^array)
+          - propertyName: allowedHeaders(CorsRule-allowedHeaders^array)
+      - schemaName: DeleteRetentionPolicy
+        properties:
+          - propertyName: enabled(boolean^boolean)
+          - propertyName: days(integer^integer)
+      - schemaName: ChangeFeed
+        properties:
+          - propertyName: enabled(boolean^boolean)
+      - schemaName: RestorePolicyProperties
+        properties:
+          - propertyName: enabled(boolean^boolean)
+          - propertyName: days(integer^integer)
+          - propertyName: lastEnabledTime(RestorePolicyProperties-lastEnabledTime^date-time)
+            readOnly: true
+          - propertyName: minRestoreTime(RestorePolicyProperties-minRestoreTime^date-time)
+            readOnly: true
+      - schemaName: ListContainerItems
+        properties:
+          - propertyName: value(ListContainerItems-value^array)
+            readOnly: true
+          - propertyName: nextLink(ListContainerItems-nextLink^string)
+            readOnly: true
+      - schemaName: ListContainerItem
+        properties:
+          - propertyName: properties(ContainerProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: ContainerProperties
+        properties:
+          - propertyName: version(ContainerProperties-version^string)
+            readOnly: true
+          - propertyName: deleted(boolean^boolean)
+            readOnly: true
+          - propertyName: deletedTime(ContainerProperties-deletedTime^date-time)
+            readOnly: true
+          - propertyName: remainingRetentionDays(integer^integer)
+            readOnly: true
+          - propertyName: defaultEncryptionScope(ContainerProperties-defaultEncryptionScope^string)
+          - propertyName: denyEncryptionScopeOverride(boolean^boolean)
+          - propertyName: publicAccess(PublicAccess^sealed-choice)
+          - propertyName: lastModifiedTime(ContainerProperties-lastModifiedTime^date-time)
+            readOnly: true
+          - propertyName: leaseStatus(LeaseStatus^choice)
+            readOnly: true
+          - propertyName: leaseState(LeaseState^choice)
+            readOnly: true
+          - propertyName: leaseDuration(LeaseDuration^choice)
+            readOnly: true
+          - propertyName: metadata(ContainerProperties-metadata^dictionary)
+          - propertyName: ImmutabilityPolicy(ImmutabilityPolicyProperties^object)
+            readOnly: true
+          - propertyName: legalHold(LegalHoldProperties^object)
+            readOnly: true
+          - propertyName: hasLegalHold(boolean^boolean)
+            readOnly: true
+          - propertyName: hasImmutabilityPolicy(boolean^boolean)
+            readOnly: true
+      - schemaName: ImmutabilityPolicyProperties
+        properties:
+          - propertyName: properties(ImmutabilityPolicyProperty^object)
+            x-ms-client-flatten: true
+          - propertyName: etag(ImmutabilityPolicyProperties-etag^string)
+            readOnly: true
+          - propertyName: updateHistory(ImmutabilityPolicyProperties-updateHistory^array)
+            readOnly: true
+      - schemaName: ImmutabilityPolicyProperty
+        properties:
+          - propertyName: immutabilityPeriodSinceCreationInDays(integer^integer)
+          - propertyName: state(ImmutabilityPolicyState^choice)
+            readOnly: true
+          - propertyName: allowProtectedAppendWrites(boolean^boolean)
+      - schemaName: UpdateHistoryProperty
+        properties:
+          - propertyName: update(ImmutabilityPolicyUpdateType^choice)
+            readOnly: true
+          - propertyName: immutabilityPeriodSinceCreationInDays(integer^integer)
+            readOnly: true
+          - propertyName: timestamp(UpdateHistoryProperty-timestamp^date-time)
+            readOnly: true
+          - propertyName: objectIdentifier(UpdateHistoryProperty-objectIdentifier^string)
+            readOnly: true
+          - propertyName: tenantId(UpdateHistoryProperty-tenantId^string)
+            readOnly: true
+          - propertyName: upn(UpdateHistoryProperty-upn^string)
+            readOnly: true
+      - schemaName: LegalHoldProperties
+        properties:
+          - propertyName: hasLegalHold(boolean^boolean)
+            readOnly: true
+          - propertyName: tags(LegalHoldProperties-tags^array)
+      - schemaName: TagProperty
+        properties:
+          - propertyName: tag(TagProperty-tag^string)
+            readOnly: true
+          - propertyName: timestamp(TagProperty-timestamp^date-time)
+            readOnly: true
+          - propertyName: objectIdentifier(TagProperty-objectIdentifier^string)
+            readOnly: true
+          - propertyName: tenantId(TagProperty-tenantId^string)
+            readOnly: true
+          - propertyName: upn(TagProperty-upn^string)
+            readOnly: true
+      - schemaName: AzureEntityResource
+        properties:
+          - propertyName: etag(AzureEntityResource-etag^string)
+            readOnly: true
+      - schemaName: BlobContainer
+        properties:
+          - propertyName: ContainerProperties(ContainerProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: LegalHold
+        properties:
+          - propertyName: hasLegalHold(boolean^boolean)
+            readOnly: true
+          - propertyName: tags(LegalHold-tags^array)
+      - schemaName: ImmutabilityPolicy
+        properties:
+          - propertyName: properties(ImmutabilityPolicyProperty^object)
+            x-ms-client-flatten: true
+      - schemaName: LeaseContainerRequest
+        properties:
+          - propertyName: action(LeaseContainerRequest-action^choice)
+          - propertyName: leaseId(LeaseContainerRequest-leaseId^string)
+          - propertyName: breakPeriod(integer^integer)
+          - propertyName: leaseDuration(integer^integer)
+          - propertyName: proposedLeaseId(LeaseContainerRequest-proposedLeaseId^string)
+      - schemaName: LeaseContainerResponse
+        properties:
+          - propertyName: leaseId(LeaseContainerResponse-leaseId^string)
+          - propertyName: leaseTimeSeconds(LeaseContainerResponse-leaseTimeSeconds^string)
+      - schemaName: FileServiceItems
+        properties:
+          - propertyName: value(FileServiceItems-value^array)
+            readOnly: true
+      - schemaName: FileServiceProperties
+        properties:
+          - propertyName: FileServiceProperties(FileServiceProperties^object)
+            x-ms-client-flatten: true
+          - propertyName: sku(Sku^object)
+            readOnly: true
+      - schemaName: FileServiceProperties
+        properties:
+          - propertyName: cors(CorsRules^object)
+          - propertyName: shareDeleteRetentionPolicy(DeleteRetentionPolicy^object)
+      - schemaName: CloudError
+        properties:
+          - propertyName: error(CloudErrorBody^object)
+      - schemaName: CloudErrorBody
+        properties:
+          - propertyName: code(CloudErrorBody-code^string)
+          - propertyName: message(CloudErrorBody-message^string)
+          - propertyName: target(CloudErrorBody-target^string)
+          - propertyName: details(CloudErrorBody-details^array)
+      - schemaName: FileShareItems
+        properties:
+          - propertyName: value(FileShareItems-value^array)
+            readOnly: true
+          - propertyName: nextLink(FileShareItems-nextLink^string)
+            readOnly: true
+      - schemaName: FileShareItem
+        properties:
+          - propertyName: properties(FileShareProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: FileShareProperties
+        properties:
+          - propertyName: lastModifiedTime(FileShareProperties-lastModifiedTime^date-time)
+            readOnly: true
+          - propertyName: metadata(FileShareProperties-metadata^dictionary)
+          - propertyName: shareQuota(integer^integer)
+          - propertyName: enabledProtocols(EnabledProtocols^choice)
+          - propertyName: rootSquash(RootSquashType^choice)
+          - propertyName: version(FileShareProperties-version^string)
+            readOnly: true
+          - propertyName: deleted(boolean^boolean)
+            readOnly: true
+          - propertyName: deletedTime(FileShareProperties-deletedTime^date-time)
+            readOnly: true
+          - propertyName: remainingRetentionDays(integer^integer)
+            readOnly: true
+          - propertyName: accessTier(ShareAccessTier^choice)
+          - propertyName: accessTierChangeTime(FileShareProperties-accessTierChangeTime^date-time)
+            readOnly: true
+          - propertyName: accessTierStatus(FileShareProperties-accessTierStatus^string)
+            readOnly: true
+          - propertyName: shareUsageBytes(integer^integer)
+            readOnly: true
+      - schemaName: FileShare
+        properties:
+          - propertyName: FileShareProperties(FileShareProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: DeletedShare
+        properties:
+          - propertyName: deletedShareName(DeletedShare-deletedShareName^string)
+          - propertyName: deletedShareVersion(DeletedShare-deletedShareVersion^string)
+      - schemaName: ListQueueServices
+        properties:
+          - propertyName: value(ListQueueServices-value^array)
+            readOnly: true
+      - schemaName: QueueServiceProperties
+        properties:
+          - propertyName: QueueServiceProperties(QueueServiceProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: QueueServiceProperties
+        properties:
+          - propertyName: cors(CorsRules^object)
+      - schemaName: StorageQueue
+        properties:
+          - propertyName: QueueProperties(QueueProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: QueueProperties
+        properties:
+          - propertyName: metadata(QueueProperties-metadata^dictionary)
+          - propertyName: approximateMessageCount(integer^integer)
+            readOnly: true
+      - schemaName: ListQueueResource
+        properties:
+          - propertyName: value(ListQueueResource-value^array)
+            readOnly: true
+          - propertyName: nextLink(ListQueueResource-nextLink^string)
+            readOnly: true
+      - schemaName: ListQueue
+        properties:
+          - propertyName: QueueProperties(ListQueueProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: ListQueueProperties
+        properties:
+          - propertyName: metadata(ListQueueProperties-metadata^dictionary)
+      - schemaName: ListTableServices
+        properties:
+          - propertyName: value(ListTableServices-value^array)
+            readOnly: true
+      - schemaName: TableServiceProperties
+        properties:
+          - propertyName: TableServiceProperties(TableServiceProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: TableServiceProperties
+        properties:
+          - propertyName: cors(CorsRules^object)
+      - schemaName: Table
+        properties:
+          - propertyName: TableProperties(TableProperties^object)
+            x-ms-client-flatten: true
+      - schemaName: TableProperties
+        properties:
+          - propertyName: tableName(TableProperties-tableName^string)
+            readOnly: true
+      - schemaName: ListTableResource
+        properties:
+          - propertyName: value(ListTableResource-value^array)
+            readOnly: true
+          - propertyName: nextLink(ListTableResource-nextLink^string)
+            readOnly: true
+  choices:
+    all:
+      - choiceName: SkuName
+        choiceValues:
+          - choiceValue: Standard_LRS
+          - choiceValue: Standard_GRS
+          - choiceValue: Standard_RAGRS
+          - choiceValue: Standard_ZRS
+          - choiceValue: Premium_LRS
+          - choiceValue: Premium_ZRS
+          - choiceValue: Standard_GZRS
+          - choiceValue: Standard_RAGZRS
+      - choiceName: Kind
+        choiceValues:
+          - choiceValue: Storage
+          - choiceValue: StorageV2
+          - choiceValue: BlobStorage
+          - choiceValue: FileStorage
+          - choiceValue: BlockBlobStorage
+      - choiceName: ReasonCode
+        choiceValues:
+          - choiceValue: QuotaId
+          - choiceValue: NotAvailableForSubscription
+      - choiceName: KeyType
+        choiceValues:
+          - choiceValue: Service
+          - choiceValue: Account
+      - choiceName: KeySource
+        choiceValues:
+          - choiceValue: Microsoft.Storage
+          - choiceValue: Microsoft.Keyvault
+      - choiceName: Bypass
+        choiceValues:
+          - choiceValue: None
+          - choiceValue: Logging
+          - choiceValue: Metrics
+          - choiceValue: AzureServices
+      - choiceName: DirectoryServiceOptions
+        choiceValues:
+          - choiceValue: None
+          - choiceValue: AADDS
+          - choiceValue: AD
+      - choiceName: LargeFileSharesState
+        choiceValues:
+          - choiceValue: Disabled
+          - choiceValue: Enabled
+      - choiceName: RoutingChoice
+        choiceValues:
+          - choiceValue: MicrosoftRouting
+          - choiceValue: InternetRouting
+      - choiceName: MinimumTlsVersion
+        choiceValues:
+          - choiceValue: TLS1_0
+          - choiceValue: TLS1_1
+          - choiceValue: TLS1_2
+      - choiceName: GeoReplicationStatus
+        choiceValues:
+          - choiceValue: Live
+          - choiceValue: Bootstrap
+          - choiceValue: Unavailable
+      - choiceName: PrivateEndpointServiceConnectionStatus
+        choiceValues:
+          - choiceValue: Pending
+          - choiceValue: Approved
+          - choiceValue: Rejected
+      - choiceName: PrivateEndpointConnectionProvisioningState
+        choiceValues:
+          - choiceValue: Succeeded
+          - choiceValue: Creating
+          - choiceValue: Deleting
+          - choiceValue: Failed
+      - choiceName: BlobRestoreProgressStatus
+        choiceValues:
+          - choiceValue: InProgress
+          - choiceValue: Complete
+          - choiceValue: Failed
+      - choiceName: Services
+        choiceValues:
+          - choiceValue: b
+          - choiceValue: q
+          - choiceValue: t
+          - choiceValue: f
+      - choiceName: SignedResourceTypes
+        choiceValues:
+          - choiceValue: s
+          - choiceValue: c
+          - choiceValue: o
+      - choiceName: Permissions
+        choiceValues:
+          - choiceValue: r
+          - choiceValue: d
+          - choiceValue: w
+          - choiceValue: l
+          - choiceValue: a
+          - choiceValue: c
+          - choiceValue: u
+          - choiceValue: p
+      - choiceName: signedResource
+        choiceValues:
+          - choiceValue: b
+          - choiceValue: c
+          - choiceValue: f
+          - choiceValue: s
+      - choiceName: ManagementPolicyName
+        choiceValues:
+          - choiceValue: default
+      - choiceName: RuleType
+        choiceValues:
+          - choiceValue: Lifecycle
+      - choiceName: EncryptionScopeSource
+        choiceValues:
+          - choiceValue: Microsoft.Storage
+          - choiceValue: Microsoft.KeyVault
+      - choiceName: EncryptionScopeState
+        choiceValues:
+          - choiceValue: Enabled
+          - choiceValue: Disabled
+      - choiceName: CorsRule-allowedMethodsItem
+        choiceValues:
+          - choiceValue: DELETE
+          - choiceValue: GET
+          - choiceValue: HEAD
+          - choiceValue: MERGE
+          - choiceValue: POST
+          - choiceValue: OPTIONS
+          - choiceValue: PUT
+      - choiceName: ListContainersInclude
+        choiceValues:
+          - choiceValue: deleted
+      - choiceName: LeaseStatus
+        choiceValues:
+          - choiceValue: Locked
+          - choiceValue: Unlocked
+      - choiceName: LeaseState
+        choiceValues:
+          - choiceValue: Available
+          - choiceValue: Leased
+          - choiceValue: Expired
+          - choiceValue: Breaking
+          - choiceValue: Broken
+      - choiceName: LeaseDuration
+        choiceValues:
+          - choiceValue: Infinite
+          - choiceValue: Fixed
+      - choiceName: ImmutabilityPolicyState
+        choiceValues:
+          - choiceValue: Locked
+          - choiceValue: Unlocked
+      - choiceName: ImmutabilityPolicyUpdateType
+        choiceValues:
+          - choiceValue: put
+          - choiceValue: lock
+          - choiceValue: extend
+      - choiceName: LeaseContainerRequest-action
+        choiceValues:
+          - choiceValue: Acquire
+          - choiceValue: Renew
+          - choiceValue: Change
+          - choiceValue: Release
+          - choiceValue: Break
+      - choiceName: EnabledProtocols
+        choiceValues:
+          - choiceValue: SMB
+          - choiceValue: NFS
+      - choiceName: RootSquashType
+        choiceValues:
+          - choiceValue: NoRootSquash
+          - choiceValue: RootSquash
+          - choiceValue: AllSquash
+      - choiceName: ShareAccessTier
+        choiceValues:
+          - choiceValue: TransactionOptimized
+          - choiceValue: Hot
+          - choiceValue: Cool
+          - choiceValue: Premium
+      - choiceName: SkuTier
+        choiceValues:
+          - choiceValue: Standard
+          - choiceValue: Premium
+      - choiceName: Reason
+        choiceValues:
+          - choiceValue: AccountNameInvalid
+          - choiceValue: AlreadyExists
+      - choiceName: State
+        choiceValues:
+          - choiceValue: provisioning
+          - choiceValue: deprovisioning
+          - choiceValue: succeeded
+          - choiceValue: failed
+          - choiceValue: networkSourceDeleted
+      - choiceName: DefaultAction
+        choiceValues:
+          - choiceValue: Allow
+          - choiceValue: Deny
+      - choiceName: AccessTier
+        choiceValues:
+          - choiceValue: Hot
+          - choiceValue: Cool
+      - choiceName: ProvisioningState
+        choiceValues:
+          - choiceValue: Creating
+          - choiceValue: ResolvingDNS
+          - choiceValue: Succeeded
+      - choiceName: AccountStatus
+        choiceValues:
+          - choiceValue: available
+          - choiceValue: unavailable
+      - choiceName: StorageAccountExpand
+        choiceValues:
+          - choiceValue: geoReplicationStats
+          - choiceValue: blobRestoreStatus
+      - choiceName: KeyPermission
+        choiceValues:
+          - choiceValue: Read
+          - choiceValue: Full
+      - choiceName: UsageUnit
+        choiceValues:
+          - choiceValue: Count
+          - choiceValue: Bytes
+          - choiceValue: Seconds
+          - choiceValue: Percent
+          - choiceValue: CountsPerSecond
+          - choiceValue: BytesPerSecond
+      - choiceName: HttpProtocol
+        choiceValues:
+          - choiceValue: https,http
+          - choiceValue: https
+      - choiceName: PublicAccess
+        choiceValues:
+          - choiceValue: Container
+          - choiceValue: Blob
+          - choiceValue: None

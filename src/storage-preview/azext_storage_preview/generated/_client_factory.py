@@ -1,4 +1,3 @@
-# coding=utf-8
 # --------------------------------------------------------------------------
 # Copyright (c) Microsoft Corporation. All rights reserved.
 # Licensed under the MIT License. See License.txt in the project root for
@@ -9,4 +8,13 @@
 # regenerated.
 # --------------------------------------------------------------------------
 
-__path__ = __import__('pkgutil').extend_path(__path__, __name__)
+
+def cf_storage_cl(cli_ctx, *_):
+    from azure.cli.core.commands.client_factory import get_mgmt_service_client
+    from azext_storage_preview.vendored_sdks.azure_mgmt_storage.v2019_06_01 import StorageManagementClient
+    return get_mgmt_service_client(cli_ctx,
+                                   StorageManagementClient)
+
+
+def cf_local_user(cli_ctx, *_):
+    return cf_storage_cl(cli_ctx).local_users
