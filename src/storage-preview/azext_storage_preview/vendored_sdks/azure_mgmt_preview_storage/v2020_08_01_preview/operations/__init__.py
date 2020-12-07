@@ -16,6 +16,7 @@ from ._blob_inventory_policies_operations import BlobInventoryPoliciesOperations
 from ._private_endpoint_connections_operations import PrivateEndpointConnectionsOperations
 from ._private_link_resources_operations import PrivateLinkResourcesOperations
 from ._object_replication_policies_operations import ObjectReplicationPoliciesOperations
+from ._local_users_operations import LocalUsersOperations
 from ._encryption_scopes_operations import EncryptionScopesOperations
 from ._blob_services_operations import BlobServicesOperations
 from ._blob_containers_operations import BlobContainersOperations
@@ -37,6 +38,7 @@ __all__ = [
     'PrivateEndpointConnectionsOperations',
     'PrivateLinkResourcesOperations',
     'ObjectReplicationPoliciesOperations',
+    'LocalUsersOperations',
     'EncryptionScopesOperations',
     'BlobServicesOperations',
     'BlobContainersOperations',

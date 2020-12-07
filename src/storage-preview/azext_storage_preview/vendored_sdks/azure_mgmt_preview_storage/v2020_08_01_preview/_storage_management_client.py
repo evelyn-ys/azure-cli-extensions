@@ -28,6 +28,7 @@ from .operations import BlobInventoryPoliciesOperations
 from .operations import PrivateEndpointConnectionsOperations
 from .operations import PrivateLinkResourcesOperations
 from .operations import ObjectReplicationPoliciesOperations
+from .operations import LocalUsersOperations
 from .operations import EncryptionScopesOperations
 from .operations import BlobServicesOperations
 from .operations import BlobContainersOperations
@@ -63,6 +64,8 @@ class StorageManagementClient(object):
     :vartype private_link_resources: azure.mgmt.storage.v2020_08_01_preview.operations.PrivateLinkResourcesOperations
     :ivar object_replication_policies: ObjectReplicationPoliciesOperations operations
     :vartype object_replication_policies: azure.mgmt.storage.v2020_08_01_preview.operations.ObjectReplicationPoliciesOperations
+    :ivar local_users: LocalUsersOperations operations
+    :vartype local_users: azure.mgmt.storage.v2020_08_01_preview.operations.LocalUsersOperations
     :ivar encryption_scopes: EncryptionScopesOperations operations
     :vartype encryption_scopes: azure.mgmt.storage.v2020_08_01_preview.operations.EncryptionScopesOperations
     :ivar blob_services: BlobServicesOperations operations
@@ -104,6 +107,7 @@ class StorageManagementClient(object):
 
         client_models = {k: v for k, v in models.__dict__.items() if isinstance(v, type)}
         self._serialize = Serializer(client_models)
+        self._serialize.client_side_validation = False
         self._deserialize = Deserializer(client_models)
 
         self.operations = Operations(
@@ -125,6 +129,8 @@ class StorageManagementClient(object):
         self.private_link_resources = PrivateLinkResourcesOperations(
             self._client, self._config, self._serialize, self._deserialize)
         self.object_replication_policies = ObjectReplicationPoliciesOperations(
+            self._client, self._config, self._serialize, self._deserialize)
+        self.local_users = LocalUsersOperations(
             self._client, self._config, self._serialize, self._deserialize)
         self.encryption_scopes = EncryptionScopesOperations(
             self._client, self._config, self._serialize, self._deserialize)

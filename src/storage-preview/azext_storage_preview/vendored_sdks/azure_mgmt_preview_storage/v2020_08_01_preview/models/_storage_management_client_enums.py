@@ -250,6 +250,11 @@ class ListContainersInclude(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum))
 
     DELETED = "deleted"
 
+class ListSharesExpand(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
+
+    DELETED = "deleted"
+    SNAPSHOTS = "snapshots"
+
 class ManagementPolicyName(with_metaclass(_CaseInsensitiveEnumMeta, str, Enum)):
 
     DEFAULT = "default"

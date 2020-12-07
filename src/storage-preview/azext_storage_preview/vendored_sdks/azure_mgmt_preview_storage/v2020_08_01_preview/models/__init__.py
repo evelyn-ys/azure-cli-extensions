@@ -51,10 +51,10 @@ try:
     from ._models_py3 import FileShareItem
     from ._models_py3 import FileShareItems
     from ._models_py3 import GeoReplicationStats
-    from ._models_py3 import IPRule
     from ._models_py3 import Identity
     from ._models_py3 import ImmutabilityPolicy
     from ._models_py3 import ImmutabilityPolicyProperties
+    from ._models_py3 import IpRule
     from ._models_py3 import KeyVaultProperties
     from ._models_py3 import LastAccessTimeTrackingPolicy
     from ._models_py3 import LeaseContainerRequest
@@ -71,6 +71,9 @@ try:
     from ._models_py3 import ListServiceSasResponse
     from ._models_py3 import ListTableResource
     from ._models_py3 import ListTableServices
+    from ._models_py3 import LocalUser
+    from ._models_py3 import LocalUserKeys
+    from ._models_py3 import LocalUsers
     from ._models_py3 import ManagementPolicy
     from ._models_py3 import ManagementPolicyAction
     from ._models_py3 import ManagementPolicyBaseBlob
@@ -89,6 +92,7 @@ try:
     from ._models_py3 import Operation
     from ._models_py3 import OperationDisplay
     from ._models_py3 import OperationListResult
+    from ._models_py3 import PermissionScope
     from ._models_py3 import PrivateEndpoint
     from ._models_py3 import PrivateEndpointConnection
     from ._models_py3 import PrivateEndpointConnectionListResult
@@ -103,12 +107,13 @@ try:
     from ._models_py3 import RestorePolicyProperties
     from ._models_py3 import Restriction
     from ._models_py3 import RoutingPreference
-    from ._models_py3 import SKUCapability
     from ._models_py3 import ServiceSasParameters
     from ._models_py3 import ServiceSpecification
     from ._models_py3 import Sku
+    from ._models_py3 import SkuCapability
     from ._models_py3 import SkuInformation
     from ._models_py3 import SmbSetting
+    from ._models_py3 import SshPublicKey
     from ._models_py3 import StorageAccount
     from ._models_py3 import StorageAccountCheckNameAvailabilityParameters
     from ._models_py3 import StorageAccountCreateParameters
@@ -177,10 +182,10 @@ except (SyntaxError, ImportError):
     from ._models import FileShareItem  # type: ignore
     from ._models import FileShareItems  # type: ignore
     from ._models import GeoReplicationStats  # type: ignore
-    from ._models import IPRule  # type: ignore
     from ._models import Identity  # type: ignore
     from ._models import ImmutabilityPolicy  # type: ignore
     from ._models import ImmutabilityPolicyProperties  # type: ignore
+    from ._models import IpRule  # type: ignore
     from ._models import KeyVaultProperties  # type: ignore
     from ._models import LastAccessTimeTrackingPolicy  # type: ignore
     from ._models import LeaseContainerRequest  # type: ignore
@@ -197,6 +202,9 @@ except (SyntaxError, ImportError):
     from ._models import ListServiceSasResponse  # type: ignore
     from ._models import ListTableResource  # type: ignore
     from ._models import ListTableServices  # type: ignore
+    from ._models import LocalUser  # type: ignore
+    from ._models import LocalUserKeys  # type: ignore
+    from ._models import LocalUsers  # type: ignore
     from ._models import ManagementPolicy  # type: ignore
     from ._models import ManagementPolicyAction  # type: ignore
     from ._models import ManagementPolicyBaseBlob  # type: ignore
@@ -215,6 +223,7 @@ except (SyntaxError, ImportError):
     from ._models import Operation  # type: ignore
     from ._models import OperationDisplay  # type: ignore
     from ._models import OperationListResult  # type: ignore
+    from ._models import PermissionScope  # type: ignore
     from ._models import PrivateEndpoint  # type: ignore
     from ._models import PrivateEndpointConnection  # type: ignore
     from ._models import PrivateEndpointConnectionListResult  # type: ignore
@@ -229,12 +238,13 @@ except (SyntaxError, ImportError):
     from ._models import RestorePolicyProperties  # type: ignore
     from ._models import Restriction  # type: ignore
     from ._models import RoutingPreference  # type: ignore
-    from ._models import SKUCapability  # type: ignore
     from ._models import ServiceSasParameters  # type: ignore
     from ._models import ServiceSpecification  # type: ignore
     from ._models import Sku  # type: ignore
+    from ._models import SkuCapability  # type: ignore
     from ._models import SkuInformation  # type: ignore
     from ._models import SmbSetting  # type: ignore
+    from ._models import SshPublicKey  # type: ignore
     from ._models import StorageAccount  # type: ignore
     from ._models import StorageAccountCheckNameAvailabilityParameters  # type: ignore
     from ._models import StorageAccountCreateParameters  # type: ignore
@@ -288,6 +298,7 @@ from ._storage_management_client_enums import (
     LeaseState,
     LeaseStatus,
     ListContainersInclude,
+    ListSharesExpand,
     ManagementPolicyName,
     MinimumTlsVersion,
     Name,
@@ -357,10 +368,10 @@ __all__ = [
     'FileShareItem',
     'FileShareItems',
     'GeoReplicationStats',
-    'IPRule',
     'Identity',
     'ImmutabilityPolicy',
     'ImmutabilityPolicyProperties',
+    'IpRule',
     'KeyVaultProperties',
     'LastAccessTimeTrackingPolicy',
     'LeaseContainerRequest',
@@ -377,6 +388,9 @@ __all__ = [
     'ListServiceSasResponse',
     'ListTableResource',
     'ListTableServices',
+    'LocalUser',
+    'LocalUserKeys',
+    'LocalUsers',
     'ManagementPolicy',
     'ManagementPolicyAction',
     'ManagementPolicyBaseBlob',
@@ -395,6 +409,7 @@ __all__ = [
     'Operation',
     'OperationDisplay',
     'OperationListResult',
+    'PermissionScope',
     'PrivateEndpoint',
     'PrivateEndpointConnection',
     'PrivateEndpointConnectionListResult',
@@ -409,12 +424,13 @@ __all__ = [
     'RestorePolicyProperties',
     'Restriction',
     'RoutingPreference',
-    'SKUCapability',
     'ServiceSasParameters',
     'ServiceSpecification',
     'Sku',
+    'SkuCapability',
     'SkuInformation',
     'SmbSetting',
+    'SshPublicKey',
     'StorageAccount',
     'StorageAccountCheckNameAvailabilityParameters',
     'StorageAccountCreateParameters',
@@ -466,6 +482,7 @@ __all__ = [
     'LeaseState',
     'LeaseStatus',
     'ListContainersInclude',
+    'ListSharesExpand',
     'ManagementPolicyName',
     'MinimumTlsVersion',
     'Name',

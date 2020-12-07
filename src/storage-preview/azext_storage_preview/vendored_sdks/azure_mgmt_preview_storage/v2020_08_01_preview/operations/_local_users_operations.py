@@ -18,13 +18,13 @@ from .. import models
 
 if TYPE_CHECKING:
     # pylint: disable=unused-import,ungrouped-imports
-    from typing import Any, Callable, Dict, Generic, Iterable, Optional, TypeVar, Union
+    from typing import Any, Callable, Dict, Generic, Iterable, Optional, TypeVar
 
     T = TypeVar('T')
     ClsType = Optional[Callable[[PipelineResponse[HttpRequest, HttpResponse], T, Dict[str, Any]], Any]]
 
-class FileSharesOperations(object):
-    """FileSharesOperations operations.
+class LocalUsersOperations(object):
+    """LocalUsersOperations operations.
 
     You should not instantiate this class directly. Instead, you should create a Client instance that
     instantiates it for you and attaches it as an attribute.
@@ -49,13 +49,10 @@ class FileSharesOperations(object):
         self,
         resource_group_name,  # type: str
         account_name,  # type: str
-        maxpagesize=None,  # type: Optional[str]
-        filter=None,  # type: Optional[str]
-        expand=None,  # type: Optional[Union[str, "models.ListSharesExpand"]]
         **kwargs  # type: Any
     ):
-        # type: (...) -> Iterable["models.FileShareItems"]
-        """Lists all shares.
+        # type: (...) -> Iterable["models.LocalUsers"]
+        """List the local users associated with the storage account.
 
         :param resource_group_name: The name of the resource group within the user's subscription. The
          name is case insensitive.
@@ -64,20 +61,12 @@ class FileSharesOperations(object):
          Storage account names must be between 3 and 24 characters in length and use numbers and lower-
          case letters only.
         :type account_name: str
-        :param maxpagesize: Optional. Specified maximum number of shares that can be included in the
-         list.
-        :type maxpagesize: str
-        :param filter: Optional. When specified, only share names starting with the filter will be
-         listed.
-        :type filter: str
-        :param expand: Optional, used to expand the properties within share's properties.
-        :type expand: str or ~azure.mgmt.storage.v2020_08_01_preview.models.ListSharesExpand
         :keyword callable cls: A custom type or function that will be passed the direct response
-        :return: An iterator like instance of either FileShareItems or the result of cls(response)
-        :rtype: ~azure.core.paging.ItemPaged[~azure.mgmt.storage.v2020_08_01_preview.models.FileShareItems]
+        :return: An iterator like instance of either LocalUsers or the result of cls(response)
+        :rtype: ~azure.core.paging.ItemPaged[~azure.mgmt.storage.v2020_08_01_preview.models.LocalUsers]
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        cls = kwargs.pop('cls', None)  # type: ClsType["models.FileShareItems"]
+        cls = kwargs.pop('cls', None)  # type: ClsType["models.LocalUsers"]
         error_map = {
             401: ClientAuthenticationError, 404: ResourceNotFoundError, 409: ResourceExistsError
         }
@@ -102,12 +91,6 @@ class FileSharesOperations(object):
                 # Construct parameters
                 query_parameters = {}  # type: Dict[str, Any]
                 query_parameters['api-version'] = self._serialize.query("api_version", api_version, 'str')
-                if maxpagesize is not None:
-                    query_parameters['$maxpagesize'] = self._serialize.query("maxpagesize", maxpagesize, 'str')
-                if filter is not None:
-                    query_parameters['$filter'] = self._serialize.query("filter", filter, 'str')
-                if expand is not None:
-                    query_parameters['$expand'] = self._serialize.query("expand", expand, 'str')
 
                 request = self._client.get(url, query_parameters, header_parameters)
             else:
@@ -117,11 +100,11 @@ class FileSharesOperations(object):
             return request
 
         def extract_data(pipeline_response):
-            deserialized = self._deserialize('FileShareItems', pipeline_response)
+            deserialized = self._deserialize('LocalUsers', pipeline_response)
             list_of_elem = deserialized.value
             if cls:
                 list_of_elem = cls(list_of_elem)
-            return deserialized.next_link or None, iter(list_of_elem)
+            return None, iter(list_of_elem)
 
         def get_next(next_link=None):
             request = prepare_request(next_link)
@@ -130,193 +113,26 @@ class FileSharesOperations(object):
             response = pipeline_response.http_response
 
             if response.status_code not in [200]:
+                error = self._deserialize(models.ErrorResponse, response)
                 map_error(status_code=response.status_code, response=response, error_map=error_map)
-                raise HttpResponseError(response=response, error_format=ARMErrorFormat)
+                raise HttpResponseError(response=response, model=error, error_format=ARMErrorFormat)
 
             return pipeline_response
 
         return ItemPaged(
             get_next, extract_data
         )
-    list.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares'}  # type: ignore
-
-    def create(
-        self,
-        resource_group_name,  # type: str
-        account_name,  # type: str
-        share_name,  # type: str
-        file_share,  # type: "models.FileShare"
-        expand="snapshots",  # type: Optional[str]
-        **kwargs  # type: Any
-    ):
-        # type: (...) -> "models.FileShare"
-        """Creates a new share under the specified account as described by request body. The share
-        resource includes metadata and properties for that share. It does not include a list of the
-        files contained by the share.
-
-        :param resource_group_name: The name of the resource group within the user's subscription. The
-         name is case insensitive.
-        :type resource_group_name: str
-        :param account_name: The name of the storage account within the specified resource group.
-         Storage account names must be between 3 and 24 characters in length and use numbers and lower-
-         case letters only.
-        :type account_name: str
-        :param share_name: The name of the file share within the specified storage account. File share
-         names must be between 3 and 63 characters in length and use numbers, lower-case letters and
-         dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter
-         or number.
-        :type share_name: str
-        :param file_share: Properties of the file share to create.
-        :type file_share: ~azure.mgmt.storage.v2020_08_01_preview.models.FileShare
-        :param expand: Optional, used to create a snapshot.
-        :type expand: str
-        :keyword callable cls: A custom type or function that will be passed the direct response
-        :return: FileShare, or the result of cls(response)
-        :rtype: ~azure.mgmt.storage.v2020_08_01_preview.models.FileShare
-        :raises: ~azure.core.exceptions.HttpResponseError
-        """
-        cls = kwargs.pop('cls', None)  # type: ClsType["models.FileShare"]
-        error_map = {
-            401: ClientAuthenticationError, 404: ResourceNotFoundError, 409: ResourceExistsError
-        }
-        error_map.update(kwargs.pop('error_map', {}))
-        api_version = "2020-08-01-preview"
-        content_type = kwargs.pop("content_type", "application/json")
-        accept = "application/json"
-
-        # Construct URL
-        url = self.create.metadata['url']  # type: ignore
-        path_format_arguments = {
-            'resourceGroupName': self._serialize.url("resource_group_name", resource_group_name, 'str', max_length=90, min_length=1, pattern=r'^[-\w\._\(\)]+$'),
-            'accountName': self._serialize.url("account_name", account_name, 'str', max_length=24, min_length=3),
-            'shareName': self._serialize.url("share_name", share_name, 'str', max_length=63, min_length=3),
-            'subscriptionId': self._serialize.url("self._config.subscription_id", self._config.subscription_id, 'str', min_length=1),
-        }
-        url = self._client.format_url(url, **path_format_arguments)
-
-        # Construct parameters
-        query_parameters = {}  # type: Dict[str, Any]
-        if expand is not None:
-            query_parameters['$expand'] = self._serialize.query("expand", expand, 'str')
-        query_parameters['api-version'] = self._serialize.query("api_version", api_version, 'str')
-
-        # Construct headers
-        header_parameters = {}  # type: Dict[str, Any]
-        header_parameters['Content-Type'] = self._serialize.header("content_type", content_type, 'str')
-        header_parameters['Accept'] = self._serialize.header("accept", accept, 'str')
-
-        body_content_kwargs = {}  # type: Dict[str, Any]
-        body_content = self._serialize.body(file_share, 'FileShare')
-        body_content_kwargs['content'] = body_content
-        request = self._client.put(url, query_parameters, header_parameters, **body_content_kwargs)
-        pipeline_response = self._client._pipeline.run(request, stream=False, **kwargs)
-        response = pipeline_response.http_response
-
-        if response.status_code not in [200, 201]:
-            map_error(status_code=response.status_code, response=response, error_map=error_map)
-            raise HttpResponseError(response=response, error_format=ARMErrorFormat)
-
-        if response.status_code == 200:
-            deserialized = self._deserialize('FileShare', pipeline_response)
-
-        if response.status_code == 201:
-            deserialized = self._deserialize('FileShare', pipeline_response)
-
-        if cls:
-            return cls(pipeline_response, deserialized, {})
-
-        return deserialized
-    create.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares/{shareName}'}  # type: ignore
-
-    def update(
-        self,
-        resource_group_name,  # type: str
-        account_name,  # type: str
-        share_name,  # type: str
-        file_share,  # type: "models.FileShare"
-        **kwargs  # type: Any
-    ):
-        # type: (...) -> "models.FileShare"
-        """Updates share properties as specified in request body. Properties not mentioned in the request
-        will not be changed. Update fails if the specified share does not already exist.
-
-        :param resource_group_name: The name of the resource group within the user's subscription. The
-         name is case insensitive.
-        :type resource_group_name: str
-        :param account_name: The name of the storage account within the specified resource group.
-         Storage account names must be between 3 and 24 characters in length and use numbers and lower-
-         case letters only.
-        :type account_name: str
-        :param share_name: The name of the file share within the specified storage account. File share
-         names must be between 3 and 63 characters in length and use numbers, lower-case letters and
-         dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter
-         or number.
-        :type share_name: str
-        :param file_share: Properties to update for the file share.
-        :type file_share: ~azure.mgmt.storage.v2020_08_01_preview.models.FileShare
-        :keyword callable cls: A custom type or function that will be passed the direct response
-        :return: FileShare, or the result of cls(response)
-        :rtype: ~azure.mgmt.storage.v2020_08_01_preview.models.FileShare
-        :raises: ~azure.core.exceptions.HttpResponseError
-        """
-        cls = kwargs.pop('cls', None)  # type: ClsType["models.FileShare"]
-        error_map = {
-            401: ClientAuthenticationError, 404: ResourceNotFoundError, 409: ResourceExistsError
-        }
-        error_map.update(kwargs.pop('error_map', {}))
-        api_version = "2020-08-01-preview"
-        content_type = kwargs.pop("content_type", "application/json")
-        accept = "application/json"
-
-        # Construct URL
-        url = self.update.metadata['url']  # type: ignore
-        path_format_arguments = {
-            'resourceGroupName': self._serialize.url("resource_group_name", resource_group_name, 'str', max_length=90, min_length=1, pattern=r'^[-\w\._\(\)]+$'),
-            'accountName': self._serialize.url("account_name", account_name, 'str', max_length=24, min_length=3),
-            'shareName': self._serialize.url("share_name", share_name, 'str', max_length=63, min_length=3),
-            'subscriptionId': self._serialize.url("self._config.subscription_id", self._config.subscription_id, 'str', min_length=1),
-        }
-        url = self._client.format_url(url, **path_format_arguments)
-
-        # Construct parameters
-        query_parameters = {}  # type: Dict[str, Any]
-        query_parameters['api-version'] = self._serialize.query("api_version", api_version, 'str')
-
-        # Construct headers
-        header_parameters = {}  # type: Dict[str, Any]
-        header_parameters['Content-Type'] = self._serialize.header("content_type", content_type, 'str')
-        header_parameters['Accept'] = self._serialize.header("accept", accept, 'str')
-
-        body_content_kwargs = {}  # type: Dict[str, Any]
-        body_content = self._serialize.body(file_share, 'FileShare')
-        body_content_kwargs['content'] = body_content
-        request = self._client.patch(url, query_parameters, header_parameters, **body_content_kwargs)
-        pipeline_response = self._client._pipeline.run(request, stream=False, **kwargs)
-        response = pipeline_response.http_response
-
-        if response.status_code not in [200]:
-            map_error(status_code=response.status_code, response=response, error_map=error_map)
-            raise HttpResponseError(response=response, error_format=ARMErrorFormat)
-
-        deserialized = self._deserialize('FileShare', pipeline_response)
-
-        if cls:
-            return cls(pipeline_response, deserialized, {})
-
-        return deserialized
-    update.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares/{shareName}'}  # type: ignore
+    list.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/localUsers'}  # type: ignore
 
     def get(
         self,
         resource_group_name,  # type: str
         account_name,  # type: str
-        share_name,  # type: str
-        expand="stats",  # type: Optional[str]
-        x_ms_snapshot=None,  # type: Optional[str]
+        username,  # type: str
         **kwargs  # type: Any
     ):
-        # type: (...) -> "models.FileShare"
-        """Gets properties of a specified share.
+        # type: (...) -> "models.LocalUser"
+        """Get the local user of the storage account by username.
 
         :param resource_group_name: The name of the resource group within the user's subscription. The
          name is case insensitive.
@@ -325,21 +141,15 @@ class FileSharesOperations(object):
          Storage account names must be between 3 and 24 characters in length and use numbers and lower-
          case letters only.
         :type account_name: str
-        :param share_name: The name of the file share within the specified storage account. File share
-         names must be between 3 and 63 characters in length and use numbers, lower-case letters and
-         dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter
-         or number.
-        :type share_name: str
-        :param expand: Optional, used to expand the properties within share's properties.
-        :type expand: str
-        :param x_ms_snapshot: Optional, used to retrieve properties of a snapshot.
-        :type x_ms_snapshot: str
+        :param username: The name of local user. The username must contain lowercase letters and
+         numbers only. It must be unique only within the storage account.
+        :type username: str
         :keyword callable cls: A custom type or function that will be passed the direct response
-        :return: FileShare, or the result of cls(response)
-        :rtype: ~azure.mgmt.storage.v2020_08_01_preview.models.FileShare
+        :return: LocalUser, or the result of cls(response)
+        :rtype: ~azure.mgmt.storage.v2020_08_01_preview.models.LocalUser
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        cls = kwargs.pop('cls', None)  # type: ClsType["models.FileShare"]
+        cls = kwargs.pop('cls', None)  # type: ClsType["models.LocalUser"]
         error_map = {
             401: ClientAuthenticationError, 404: ResourceNotFoundError, 409: ResourceExistsError
         }
@@ -352,21 +162,17 @@ class FileSharesOperations(object):
         path_format_arguments = {
             'resourceGroupName': self._serialize.url("resource_group_name", resource_group_name, 'str', max_length=90, min_length=1, pattern=r'^[-\w\._\(\)]+$'),
             'accountName': self._serialize.url("account_name", account_name, 'str', max_length=24, min_length=3),
-            'shareName': self._serialize.url("share_name", share_name, 'str', max_length=63, min_length=3),
             'subscriptionId': self._serialize.url("self._config.subscription_id", self._config.subscription_id, 'str', min_length=1),
+            'username': self._serialize.url("username", username, 'str', max_length=64, min_length=3),
         }
         url = self._client.format_url(url, **path_format_arguments)
 
         # Construct parameters
         query_parameters = {}  # type: Dict[str, Any]
         query_parameters['api-version'] = self._serialize.query("api_version", api_version, 'str')
-        if expand is not None:
-            query_parameters['$expand'] = self._serialize.query("expand", expand, 'str')
 
         # Construct headers
         header_parameters = {}  # type: Dict[str, Any]
-        if x_ms_snapshot is not None:
-            header_parameters['x-ms-snapshot'] = self._serialize.header("x_ms_snapshot", x_ms_snapshot, 'str')
         header_parameters['Accept'] = self._serialize.header("accept", accept, 'str')
 
         request = self._client.get(url, query_parameters, header_parameters)
@@ -375,26 +181,27 @@ class FileSharesOperations(object):
 
         if response.status_code not in [200]:
             map_error(status_code=response.status_code, response=response, error_map=error_map)
-            raise HttpResponseError(response=response, error_format=ARMErrorFormat)
+            error = self._deserialize(models.ErrorResponse, response)
+            raise HttpResponseError(response=response, model=error, error_format=ARMErrorFormat)
 
-        deserialized = self._deserialize('FileShare', pipeline_response)
+        deserialized = self._deserialize('LocalUser', pipeline_response)
 
         if cls:
             return cls(pipeline_response, deserialized, {})
 
         return deserialized
-    get.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares/{shareName}'}  # type: ignore
+    get.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/localUsers/{username}'}  # type: ignore
 
-    def delete(
+    def create_or_update(
         self,
         resource_group_name,  # type: str
         account_name,  # type: str
-        share_name,  # type: str
-        x_ms_snapshot=None,  # type: Optional[str]
+        username,  # type: str
+        properties,  # type: "models.LocalUser"
         **kwargs  # type: Any
     ):
-        # type: (...) -> None
-        """Deletes specified share under its account.
+        # type: (...) -> "models.LocalUser"
+        """Create or update the local user properties of the storage account.
 
         :param resource_group_name: The name of the resource group within the user's subscription. The
          name is case insensitive.
@@ -403,13 +210,84 @@ class FileSharesOperations(object):
          Storage account names must be between 3 and 24 characters in length and use numbers and lower-
          case letters only.
         :type account_name: str
-        :param share_name: The name of the file share within the specified storage account. File share
-         names must be between 3 and 63 characters in length and use numbers, lower-case letters and
-         dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter
-         or number.
-        :type share_name: str
-        :param x_ms_snapshot: Optional, used to delete a snapshot.
-        :type x_ms_snapshot: str
+        :param username: The name of local user. The username must contain lowercase letters and
+         numbers only. It must be unique only within the storage account.
+        :type username: str
+        :param properties: The local user associated with a storage account.
+        :type properties: ~azure.mgmt.storage.v2020_08_01_preview.models.LocalUser
+        :keyword callable cls: A custom type or function that will be passed the direct response
+        :return: LocalUser, or the result of cls(response)
+        :rtype: ~azure.mgmt.storage.v2020_08_01_preview.models.LocalUser
+        :raises: ~azure.core.exceptions.HttpResponseError
+        """
+        cls = kwargs.pop('cls', None)  # type: ClsType["models.LocalUser"]
+        error_map = {
+            401: ClientAuthenticationError, 404: ResourceNotFoundError, 409: ResourceExistsError
+        }
+        error_map.update(kwargs.pop('error_map', {}))
+        api_version = "2020-08-01-preview"
+        content_type = kwargs.pop("content_type", "application/json")
+        accept = "application/json"
+
+        # Construct URL
+        url = self.create_or_update.metadata['url']  # type: ignore
+        path_format_arguments = {
+            'resourceGroupName': self._serialize.url("resource_group_name", resource_group_name, 'str', max_length=90, min_length=1, pattern=r'^[-\w\._\(\)]+$'),
+            'accountName': self._serialize.url("account_name", account_name, 'str', max_length=24, min_length=3),
+            'subscriptionId': self._serialize.url("self._config.subscription_id", self._config.subscription_id, 'str', min_length=1),
+            'username': self._serialize.url("username", username, 'str', max_length=64, min_length=3),
+        }
+        url = self._client.format_url(url, **path_format_arguments)
+
+        # Construct parameters
+        query_parameters = {}  # type: Dict[str, Any]
+        query_parameters['api-version'] = self._serialize.query("api_version", api_version, 'str')
+
+        # Construct headers
+        header_parameters = {}  # type: Dict[str, Any]
+        header_parameters['Content-Type'] = self._serialize.header("content_type", content_type, 'str')
+        header_parameters['Accept'] = self._serialize.header("accept", accept, 'str')
+
+        body_content_kwargs = {}  # type: Dict[str, Any]
+        body_content = self._serialize.body(properties, 'LocalUser')
+        body_content_kwargs['content'] = body_content
+        request = self._client.put(url, query_parameters, header_parameters, **body_content_kwargs)
+        pipeline_response = self._client._pipeline.run(request, stream=False, **kwargs)
+        response = pipeline_response.http_response
+
+        if response.status_code not in [200]:
+            map_error(status_code=response.status_code, response=response, error_map=error_map)
+            error = self._deserialize(models.ErrorResponse, response)
+            raise HttpResponseError(response=response, model=error, error_format=ARMErrorFormat)
+
+        deserialized = self._deserialize('LocalUser', pipeline_response)
+
+        if cls:
+            return cls(pipeline_response, deserialized, {})
+
+        return deserialized
+    create_or_update.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/localUsers/{username}'}  # type: ignore
+
+    def delete(
+        self,
+        resource_group_name,  # type: str
+        account_name,  # type: str
+        username,  # type: str
+        **kwargs  # type: Any
+    ):
+        # type: (...) -> None
+        """Deletes the local user associated with the specified storage account.
+
+        :param resource_group_name: The name of the resource group within the user's subscription. The
+         name is case insensitive.
+        :type resource_group_name: str
+        :param account_name: The name of the storage account within the specified resource group.
+         Storage account names must be between 3 and 24 characters in length and use numbers and lower-
+         case letters only.
+        :type account_name: str
+        :param username: The name of local user. The username must contain lowercase letters and
+         numbers only. It must be unique only within the storage account.
+        :type username: str
         :keyword callable cls: A custom type or function that will be passed the direct response
         :return: None, or the result of cls(response)
         :rtype: None
@@ -428,8 +306,8 @@ class FileSharesOperations(object):
         path_format_arguments = {
             'resourceGroupName': self._serialize.url("resource_group_name", resource_group_name, 'str', max_length=90, min_length=1, pattern=r'^[-\w\._\(\)]+$'),
             'accountName': self._serialize.url("account_name", account_name, 'str', max_length=24, min_length=3),
-            'shareName': self._serialize.url("share_name", share_name, 'str', max_length=63, min_length=3),
             'subscriptionId': self._serialize.url("self._config.subscription_id", self._config.subscription_id, 'str', min_length=1),
+            'username': self._serialize.url("username", username, 'str', max_length=64, min_length=3),
         }
         url = self._client.format_url(url, **path_format_arguments)
 
@@ -439,8 +317,6 @@ class FileSharesOperations(object):
 
         # Construct headers
         header_parameters = {}  # type: Dict[str, Any]
-        if x_ms_snapshot is not None:
-            header_parameters['x-ms-snapshot'] = self._serialize.header("x_ms_snapshot", x_ms_snapshot, 'str')
         header_parameters['Accept'] = self._serialize.header("accept", accept, 'str')
 
         request = self._client.delete(url, query_parameters, header_parameters)
@@ -449,23 +325,23 @@ class FileSharesOperations(object):
 
         if response.status_code not in [200, 204]:
             map_error(status_code=response.status_code, response=response, error_map=error_map)
-            raise HttpResponseError(response=response, error_format=ARMErrorFormat)
+            error = self._deserialize(models.ErrorResponse, response)
+            raise HttpResponseError(response=response, model=error, error_format=ARMErrorFormat)
 
         if cls:
             return cls(pipeline_response, None, {})
 
-    delete.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares/{shareName}'}  # type: ignore
+    delete.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/localUsers/{username}'}  # type: ignore
 
-    def restore(
+    def list_keys(
         self,
         resource_group_name,  # type: str
         account_name,  # type: str
-        share_name,  # type: str
-        deleted_share,  # type: "models.DeletedShare"
+        username,  # type: str
         **kwargs  # type: Any
     ):
-        # type: (...) -> None
-        """Restore a file share within a valid retention days if share soft delete is enabled.
+        # type: (...) -> "models.LocalUserKeys"
+        """List the local user keys.
 
         :param resource_group_name: The name of the resource group within the user's subscription. The
          name is case insensitive.
@@ -474,34 +350,29 @@ class FileSharesOperations(object):
          Storage account names must be between 3 and 24 characters in length and use numbers and lower-
          case letters only.
         :type account_name: str
-        :param share_name: The name of the file share within the specified storage account. File share
-         names must be between 3 and 63 characters in length and use numbers, lower-case letters and
-         dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter
-         or number.
-        :type share_name: str
-        :param deleted_share:
-        :type deleted_share: ~azure.mgmt.storage.v2020_08_01_preview.models.DeletedShare
+        :param username: The name of local user. The username must contain lowercase letters and
+         numbers only. It must be unique only within the storage account.
+        :type username: str
         :keyword callable cls: A custom type or function that will be passed the direct response
-        :return: None, or the result of cls(response)
-        :rtype: None
+        :return: LocalUserKeys, or the result of cls(response)
+        :rtype: ~azure.mgmt.storage.v2020_08_01_preview.models.LocalUserKeys
         :raises: ~azure.core.exceptions.HttpResponseError
         """
-        cls = kwargs.pop('cls', None)  # type: ClsType[None]
+        cls = kwargs.pop('cls', None)  # type: ClsType["models.LocalUserKeys"]
         error_map = {
             401: ClientAuthenticationError, 404: ResourceNotFoundError, 409: ResourceExistsError
         }
         error_map.update(kwargs.pop('error_map', {}))
         api_version = "2020-08-01-preview"
-        content_type = kwargs.pop("content_type", "application/json")
         accept = "application/json"
 
         # Construct URL
-        url = self.restore.metadata['url']  # type: ignore
+        url = self.list_keys.metadata['url']  # type: ignore
         path_format_arguments = {
             'resourceGroupName': self._serialize.url("resource_group_name", resource_group_name, 'str', max_length=90, min_length=1, pattern=r'^[-\w\._\(\)]+$'),
             'accountName': self._serialize.url("account_name", account_name, 'str', max_length=24, min_length=3),
-            'shareName': self._serialize.url("share_name", share_name, 'str', max_length=63, min_length=3),
             'subscriptionId': self._serialize.url("self._config.subscription_id", self._config.subscription_id, 'str', min_length=1),
+            'username': self._serialize.url("username", username, 'str', max_length=64, min_length=3),
         }
         url = self._client.format_url(url, **path_format_arguments)
 
@@ -511,21 +382,21 @@ class FileSharesOperations(object):
 
         # Construct headers
         header_parameters = {}  # type: Dict[str, Any]
-        header_parameters['Content-Type'] = self._serialize.header("content_type", content_type, 'str')
         header_parameters['Accept'] = self._serialize.header("accept", accept, 'str')
 
-        body_content_kwargs = {}  # type: Dict[str, Any]
-        body_content = self._serialize.body(deleted_share, 'DeletedShare')
-        body_content_kwargs['content'] = body_content
-        request = self._client.post(url, query_parameters, header_parameters, **body_content_kwargs)
+        request = self._client.post(url, query_parameters, header_parameters)
         pipeline_response = self._client._pipeline.run(request, stream=False, **kwargs)
         response = pipeline_response.http_response
 
         if response.status_code not in [200]:
             map_error(status_code=response.status_code, response=response, error_map=error_map)
-            raise HttpResponseError(response=response, error_format=ARMErrorFormat)
+            error = self._deserialize(models.ErrorResponse, response)
+            raise HttpResponseError(response=response, model=error, error_format=ARMErrorFormat)
+
+        deserialized = self._deserialize('LocalUserKeys', pipeline_response)
 
         if cls:
-            return cls(pipeline_response, None, {})
+            return cls(pipeline_response, deserialized, {})
 
-    restore.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares/{shareName}/restore'}  # type: ignore
+        return deserialized
+    list_keys.metadata = {'url': '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/localUsers/{username}/listKeys'}  # type: ignore
